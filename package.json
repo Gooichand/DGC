@@ -10,7 +10,8 @@
     "build:creative": "npm --prefix Creative run build",
     "build:all": "npm run build && npm run build:creative && node scripts/assemble-site.mjs",
     "preview": "vite preview",
-    "images": "node scripts/build-images.mjs"
+    "images": "node scripts/build-images.mjs",
+    "test": "node scripts/test-safe-markdown.mjs"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

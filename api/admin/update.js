@@ -29,6 +29,10 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Valid fact text is required' });
   }
 
+  if (fact.length > 2000) {
+    return res.status(400).json({ error: 'Fact is too long (max 2000 characters)' });
+  }
+
   if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) {
     return res.status(500).json({ error: 'Vercel KV is not configured on server' });
   }

@@ -13,10 +13,28 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const { messages } = req.body;
-    
-    if (!messages || !Array.isArray(messages)) {
+    const { messages } = req.body || {};
+
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return res.status(400).json({ error: 'Messages array is required' });
+    }
+
+    // Input hardening: reject oversized payloads before spending any model tokens.
+    if (messages.length > 40) {
+      return res.status(400).json({ error: 'Conversation is too long (max 40 messages)' });
+    }
+    let totalChars = 0;
+    for (const msg of messages) {
+      if (!msg || (msg.role !== 'user' && msg.role !== 'assistant' && msg.role !== 'model')) {
+        return res.status(400).json({ error: 'Each message needs a valid role' });
+      }
+      if (typeof msg.content !== 'string' || msg.content.length > 4000) {
+        return res.status(400).json({ error: 'Each message must be text (max 4000 characters)' });
+      }
+      totalChars += msg.content.length;
+    }
+    if (totalChars > 20000) {
+      return res.status(413).json({ error: 'Conversation is too large' });
     }
 
     // Get the latest user message

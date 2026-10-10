@@ -102,48 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
   toggleBtn.addEventListener('click', toggleChat);
   closeBtn.addEventListener('click', toggleChat);
   
-  // Safe Markdown Parser
-  function parseMarkdown(text) {
-    if (!text) return '';
-    
-    let html = text
-      // Escape HTML
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      // Headers
-      .replace(/^### (.*$)/gim, '<h4>$1</h4>')
-      .replace(/^## (.*$)/gim, '<h3>$1</h3>')
-      .replace(/^# (.*$)/gim, '<h2>$1</h2>')
-      // Bold and Italic
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      // Links
-      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
-      // Lists
-      .replace(/^\* (.*$)/gim, '<ul><li>$1</li></ul>')
-      .replace(/^- (.*$)/gim, '<ul><li>$1</li></ul>')
-      // Fix adjacent lists
-      .replace(/<\/ul>\n<ul>/g, '\n')
-      // Tables (simple markdown tables)
-      .replace(/\n\|(.*)\|\n/g, function(match) {
-        if (match.includes('---')) return ''; // Skip separator rows
-        const cells = match.split('|').filter(c => c.trim() !== '').map(c => `<td>${c.trim()}</td>`).join('');
-        return `<tr>${cells}</tr>`;
-      })
-      // Paragraphs and line breaks
-      .replace(/\n\n/g, '</p><p>')
-      .replace(/\n/g, '<br>');
-      
-    // Wrap tables
-    if (html.includes('<tr>')) {
-      html = html.replace(/(<tr>.*?<\/tr>)/g, '<table class="chat-table"><tbody>$1</tbody></table>');
-      // Fix adjacent table rows
-      html = html.replace(/<\/tbody><\/table><table class="chat-table"><tbody>/g, '');
-    }
-    
-    return `<p>${html}</p>`.replace(/<p><\/p>/g, '');
-  }
+  // Markdown rendering lives in safe-markdown.js, which escapes every HTML
+  // character (including quotes) and only allows safe link schemes, so assistant
+  // output can never inject markup or event handlers. Fallback stays escaped.
+  const parseMarkdown = window.renderSafeMarkdown || ((text) => {
+    const el = document.createElement('div');
+    el.textContent = text || '';
+    return el.innerHTML;
+  });
 
   // Add message to UI
   function appendMessage(role, content) {
