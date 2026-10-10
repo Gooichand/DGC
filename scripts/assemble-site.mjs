@@ -27,7 +27,11 @@ console.log(`Copied Creative build -> ${creativeTarget}`);
 const unknownSource = resolve(root, 'Unknown');
 const unknownTarget = resolve(root, 'dist', 'Unknown');
 // Dev-only / repo-only entries the deployed static copy doesn't need.
-const UNKNOWN_EXCLUDE = new Set(['node_modules', '.git', '.opencode', '.vscode', 'api']);
+const UNKNOWN_EXCLUDE = new Set([
+  'node_modules', '.git', '.opencode', '.vscode', 'api',
+  'package.json', 'package-lock.json', 'opencode.json', 'AGENTS.md', '.gitignore',
+  'base-resume.txt', // server-only: bundled into the /api function, never served
+]);
 
 if (!existsSync(unknownSource)) {
   console.error('Unknown portfolio not found at Unknown/');

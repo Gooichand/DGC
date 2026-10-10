@@ -1,4 +1,13 @@
+const crypto = require('crypto');
 const { kv } = require('@vercel/kv');
+
+// Constant-time comparison so response timing can't be used to guess the password.
+function safeEqual(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string') return false;
+  const ha = crypto.createHash('sha256').update(a).digest();
+  const hb = crypto.createHash('sha256').update(b).digest();
+  return crypto.timingSafeEqual(ha, hb);
+}
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -12,7 +21,7 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({ error: 'Admin password not configured on server' });
   }
 
-  if (password !== adminPassword) {
+  if (!safeEqual(password, adminPassword)) {
     return res.status(401).json({ error: 'Invalid password' });
   }
 
