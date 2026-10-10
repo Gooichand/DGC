@@ -1,0 +1,11 @@
+node_modules
+dist
+.DS_Store
+*.local
+/.claude
+.opencode
+.vercel
+
+# Sub-project scratch / generated output
+Creative/tmp
+Creative/.agent

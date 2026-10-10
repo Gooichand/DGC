@@ -1,0 +1,35 @@
+# NOTE: This file is only used by Cloudflare Pages. GitHub Pages ignores it.
+# Keep noindex OFF the production domain; apply it to preview URLs only.
+# https://<your-preview-subdomain>.pages.dev/*
+#   X-Robots-Tag: noindex
+
+https://gooichand.github.io/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Cache static assets for 1 year (Performance & SEO Server Score)
+https://gooichand.github.io/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+https://gooichand.github.io/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+https://gooichand.github.io/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+https://gooichand.github.io/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+https://gooichand.github.io/*.ktx2
+  Cache-Control: public, max-age=31536000, immutable
+
+https://gooichand.github.io/*.glb
+  Cache-Control: public, max-age=31536000, immutable
+
+https://gooichand.github.io/*.mp3
+  Cache-Control: public, max-age=31536000, immutable
+
+https://gooichand.github.io/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

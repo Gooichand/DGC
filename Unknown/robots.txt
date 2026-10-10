@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gooichand.github.io/Unknown/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

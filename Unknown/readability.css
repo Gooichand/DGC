@@ -1,0 +1,66 @@
+/* ==========================================================================
+   READABILITY FLOOR
+   ------------------------------------------------------------------
+   The design uses a forensic HUD aesthetic with many micro-labels. This
+   file is loaded LAST and enforces a minimum readable size on every text
+   element that renders too small, without disturbing headings or layout.
+
+   Run the audit that generated this:  see certifications-fitcheck.js
+   ========================================================================== */
+
+/* ---- 12px: content text (descriptions, links, buttons, tags, labels) ---- */
+
+.constellation-action,
+.constellation-action.primary,
+.constellation-domain-action,
+.constellation-proof-card,
+.constellation-detail-tag,
+.constellation-domain-description,
+.constellation-node-label,
+.constellation-stat,
+.nav-tab,
+.nav-tab-text,
+.project-pin-link,
+.project-badge,
+.project-badge.badge-amber,
+.project-badge.badge-cyan,
+.term-stat-label,
+.education-neural-eyebrow,
+.education-neural-meta-label,
+.education-neural-meta-label strong,
+.education-neural-active-label,
+.education-neural-active-signal,
+.education-neural-active-fact,
+.education-neural-node-specialization,
+.education-neural-node-meta,
+.education-neural-node-meta span,
+.education-neural-node-status,
+.fc-card__provider,
+.fc-card__year,
+.fc-card__verified,
+.elastic-stack-label,
+.education-neural-case-meta,
+.education-neural-case-meta dd,
+.education-neural-case-meta dt,
+.education-neural-active-status,
+.education-neural-footer,
+.education-neural-footer span,
+.education-neural-footer small,
+.education-neural-hover-hint,
+.constellation-proof-text,
+.constellation-evidence-summary p,
+#chat-toggle-btn {
+  font-size: 12px !important;
+}
+
+/* ---- 11px: small HUD chrome (coords, kickers, status text) ---- */
+
+.constellation-confidential,
+.fc-modal__kicker,
+.fc-modal__count,
+.fc-preview__org,
+.fc-preview__tag,
+.fc-preview__hint,
+.fc-modal__hint {
+  font-size: 11px !important;
+}

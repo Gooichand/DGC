@@ -1,0 +1,14 @@
+# Cloudflare Pages redirect rules (GitHub Pages ignores this file).
+# The Creative portfolio is served as a folder on the shared host, so it lives
+# under the /Creative/ base path.
+#
+# The lightweight static /start landing page must be matched before SPA routes.
+/Creative/start  /Creative/start/index.html  200
+/Creative/start/ /Creative/start/index.html  200
+
+# Keep the root variants too, in case it is deployed at a root/subdomain.
+/start  /start/index.html  200
+/start/ /start/index.html  200
+
+# All other routes (/Creative/gallery, /Creative/about, ...) are handled by the
+# automatic SPA fallback.

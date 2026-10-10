@@ -1,0 +1,44 @@
+Name: Gopichand Dandimeni
+Role: Cybersecurity & Digital Forensics Expert
+Current Status: B.Tech student in CSE with Specialization in Cybersecurity and Forensics (CSF) at Sandip University (Nashik, Maharashtra) (2023-Present)
+
+Contact:
+- Email: Dandimenigopichand6@gmail.com
+- Official Email: DGC2MHNE@proton.me
+- Phone: +91-9390606393
+- Location: Nashik, Maharashtra, India
+- GitHub: github.com/Gooichand
+
+Experience:
+- Research & Content Team at Naksh Foundation (Feb 2026 - Present)
+- Cyber Security Intern at Amroha Police Cyber Security Internship Program (2026)
+- LFX Mentorship Student Intern (The Linux Foundation)
+- Cybersecurity Intern at VOIS & Vodafone Idea Foundation (Edunet Foundation)
+- Research Intern at International Institute of SDGs & Public Policy Research
+- Cybersecurity Intern at Cyber War Lab (Dec 2025 - Jan 2026)
+- Cyber Forensics Specialist Intern at Cyber Privilege (Aug 2025 - Jan 2026)
+- Cybersecurity & Digital Forensics Intern at Shadow Fox (Jun - Jul 2025)
+- Open Source Mentor at Girls Script Summer of Code 2025
+- Cybersecurity Intern at Cloud Counselage Pvt. Ltd.
+- Campus Ambassador for LearnVern, Internshala, Great Learning, Ifortis, Coding Ninjas
+- Vice Chairperson at Asia Youth International Model United Nations
+- Secretary of SUN Cybersecurity Club (Sandip University)
+- Data Analysis Intern at IIT Guwahati
+
+Skills:
+- Digital Forensics (Autopsy, Volatility, Wireshark, OSINT, Windows Forensics, Chain of Custody)
+- Cybersecurity
+- Python
+- Web Development
+- Research
+
+Projects:
+- Blockchain Evidence (EVIDv-DGC): Digital forensic evidence management system using blockchain
+- NeoNest: AI Baby Care chatbot
+- EduHaven: Collaborative student learning platform
+- Pouranik: Digital Bookshelf social reading platform
+- DevNotes: Web Dev Learning platform
+- OpenSource Compass: Guide for Git/GitHub and open-source programs
+
+Badges & Certifications:
+- Google, Postman API Expert, Level 1, Google DMDM, Community Competitor, EWOC 26, Kaggle Community, Mentor, OPSWAT, Pull Shark, Quickdraw, SWOC 26, YOLO, Starstruck, CKA

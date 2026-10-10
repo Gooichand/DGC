@@ -1,0 +1,476 @@
+/* ============================================================
+   GENETIC ANALYSIS — Linux/Kali terminal window redesign
+   Scoped ONLY to the #genetic-terminal component (about section).
+   Everything else on the site is untouched.
+   ============================================================ */
+
+.genetic-terminal {
+  --term-bg: rgba(5, 10, 10, 0.10);
+  --term-border: rgba(255, 255, 255, 0.18);
+  --term-green: #00ff66;
+  --term-green-soft: #00ff88;
+  --term-cyan: #25e6d0;
+  --term-text: #e9f4ec;
+  --term-muted: #8fb3a0;
+  --term-font: 'JetBrains Mono', 'Courier New', monospace;
+
+  position: relative;
+  min-width: 0;
+  margin: 2rem 0;
+  padding: 0 !important; /* override generic .glass-card padding on mobile */
+  border: 1px solid var(--term-border);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(12, 20, 18, 0.10), rgba(5, 10, 10, 0.10)),
+    var(--term-bg);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  backdrop-filter: blur(18px) saturate(170%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 0 30px rgba(255, 255, 255, 0.04),
+    0 0 18px rgba(0, 255, 102, 0.12),
+    0 18px 50px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  font-family: var(--term-font);
+  color: var(--term-text);
+  text-align: left !important; /* beat #about .glass-card centering */
+  isolation: isolate;
+}
+
+/* glass reflection sheen — light catching the top edge like real glass */
+.genetic-terminal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03) 38%, transparent 60%);
+}
+
+/* so the generic .glass-card transitions don't flash unwanted borders */
+.genetic-terminal {
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.genetic-terminal:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 0 30px rgba(255, 255, 255, 0.05),
+    0 0 26px rgba(0, 255, 102, 0.2),
+    0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Title bar ---------- */
+.term-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0.9rem;
+  background: linear-gradient(180deg, rgba(20, 28, 26, 0.95), rgba(10, 15, 14, 0.9));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  position: relative;
+  z-index: 2;
+}
+
+.term-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.term-icon {
+  color: var(--term-green);
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.term-title {
+  font-size: 0.85rem;
+  color: var(--term-muted);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.term-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex: 0 0 auto;
+}
+
+.term-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+}
+.term-dot-red { background: #ff5f57; }
+.term-dot-yellow { background: #febc2e; }
+.term-dot-green { background: #28c840; }
+
+/* ---------- Body ---------- */
+.term-body {
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem 1.3rem 1.5rem;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+/* subtle CRT scanlines overlay (non-interactive) */
+.termscanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.16) 0px,
+      rgba(0, 0, 0, 0.16) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  animation: termsCanMove 9s linear infinite;
+}
+
+@keyframes termsCanMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 60px; }
+}
+
+/* ---------- prompt line ---------- */
+.term-line {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  line-height: 1.6;
+}
+
+.term-user {
+  color: var(--term-green);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.term-cmd {
+  color: #eef7f1;
+  word-break: break-word;
+}
+
+.term-cursor,
+.term-cursor-static {
+  display: inline-block;
+  color: var(--term-green-soft);
+  font-size: 0.95em;
+  animation: termBlink 1.05s steps(2, start) infinite;
+  will-change: opacity;
+}
+
+.term-cursor-static {
+  animation: termBlink 1.05s steps(2, start) infinite;
+}
+
+/* blinking cursor turns red while typing is active */
+.genetic-terminal.term-live:focus-within .term-cursor-static {
+  color: #ff5f56;
+  text-shadow: 0 0 8px rgba(255, 95, 86, 0.5);
+}
+
+/* blinking cursor is always on for the live prompt; helper to force hide */
+.term-cursor.hidden {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes termBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ---------- header block ---------- */
+.term-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.4rem;
+  opacity: 0;
+}
+
+.term-block.term-visible {
+  animation: termFadeUp 0.55s ease forwards;
+}
+
+.term-dna {
+  color: var(--term-cyan);
+  font-size: 1.55rem;
+  text-shadow: 0 0 10px rgba(37, 230, 208, 0.7);
+  flex: 0 0 auto;
+}
+
+.term-header-text {
+  min-width: 0;
+}
+
+.term-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--term-green);
+  text-shadow: 0 0 12px rgba(0, 255, 102, 0.35);
+}
+
+.term-subheading {
+  margin-top: 0.2rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  color: var(--term-cyan);
+  opacity: 0.95;
+}
+
+.term-sep {
+  height: 1px;
+  margin: 1.2rem 0 1rem;
+  background: linear-gradient(90deg, rgba(0, 255, 102, 0.55), rgba(0, 255, 102, 0.08), rgba(0, 255, 102, 0.55));
+  position: relative;
+  opacity: 0;
+}
+
+.term-sep.term-visible {
+  animation: termFadeIn 0.5s ease forwards;
+}
+
+.term-sep::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 255, 102, 0.9), transparent);
+  animation: termSepGlow 4s ease-in-out infinite;
+}
+
+@keyframes termSepGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+/* ---------- description ---------- */
+.term-desc {
+  margin: 0;
+  color: var(--term-text);
+  opacity: 0;
+  line-height: 1.85;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.term-desc.term-visible {
+  animation: termFadeUp 0.5s ease forwards;
+}
+
+.term-desc-text {
+  color: var(--term-text);
+}
+
+/* keywords highlighted in neon green */
+.term-desc-text .t-hi {
+  color: var(--term-green);
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.35);
+}
+
+.term-desc-full {
+  margin: 0;
+  line-height: 1.85;
+}
+
+/* ---------- stats ---------- */
+.term-stats {
+  margin-top: 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  opacity: 0;
+}
+
+.term-stats.term-visible {
+  animation: termFadeUp 0.5s ease forwards;
+}
+
+.term-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+  padding: 0 0.4rem;
+  border-left: 1px solid rgba(0, 255, 102, 0.18);
+  min-width: 0;
+  opacity: 0;
+}
+
+.term-stat:first-child {
+  border-left: none;
+}
+
+.term-stat.term-visible {
+  animation: termFadeUp 0.45s ease forwards;
+  animation-delay: var(--t-d, 0s);
+}
+
+.term-stat-num {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--term-green);
+  text-shadow: 0 0 12px rgba(0, 255, 102, 0.5);
+}
+
+.term-stat-label {
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--term-muted);
+  line-height: 1.3;
+}
+
+/* ---------- final prompt ---------- */
+.term-final-prompt {
+  margin-top: 1.6rem;
+  opacity: 0;
+  border-top: 1px solid rgba(0, 255, 102, 0.14);
+  padding-top: 0.9rem;
+}
+
+.term-final-prompt.term-visible {
+  animation: termFadeUp 0.5s ease forwards;
+}
+
+/* ---------- interactive input ---------- */
+.term-hidden-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 16px; /* prevents iOS zoom on focus */
+  pointer-events: none;
+}
+
+.term-input-text {
+  color: var(--term-text);
+  word-break: break-word;
+}
+
+/* red shows only while the terminal input is actively focused/typing */
+.genetic-terminal.term-live:focus-within .term-input-text {
+  color: #ff5f56;
+  text-shadow: 0 0 8px rgba(255, 95, 86, 0.35);
+}
+
+.term-output {
+  margin-top: 0.4rem;
+}
+
+.term-out-line {
+  line-height: 1.7;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.term-out-cmd .term-user {
+  margin-right: 0.55rem;
+}
+
+.term-out-data {
+  color: var(--term-muted);
+}
+
+.term-out-err {
+  color: #ffb06b;
+}
+
+.term-out-line .term-cmd {
+  color: var(--term-text);
+}
+
+/* the command you just ran stays red in the history */
+.term-out-cmd .term-cmd {
+  color: #ff5f56;
+  text-shadow: 0 0 8px rgba(255, 95, 86, 0.35);
+}
+
+/* live state: body is clickable + focused terminal gets a subtle glow */
+.genetic-terminal.term-live .term-body {
+  cursor: text;
+}
+
+.genetic-terminal.term-live .term-final-prompt {
+  border-top-color: rgba(0, 255, 102, 0.35);
+}
+
+.genetic-terminal.term-live:focus-within {
+  border-color: rgba(0, 255, 102, 0.45);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 0 30px rgba(0, 255, 102, 0.22),
+    0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- reveal keyframes ---------- */
+@keyframes termFadeUp {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes termFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .term-body { padding: 1rem 1.05rem 1.25rem; font-size: 0.92rem; }
+  .term-heading { font-size: 1.15rem; }
+  .term-subheading { font-size: 0.85rem; }
+  .term-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem 0.8rem; }
+  .term-stat { border-left: none; }
+  .term-stat:nth-child(odd) { border-left: none; }
+  .term-stat:nth-child(3) { border-top: 1px solid rgba(0, 255, 102, 0.18); }
+  .term-stat:nth-child(4) { border-top: 1px solid rgba(0, 255, 102, 0.18); }
+  .term-stat-num { font-size: 1.5rem; }
+  .term-stat-label { font-size: 0.68rem; }
+}
+
+@media (max-width: 380px) {
+  .term-body { padding: 0.9rem 0.9rem 1.1rem; font-size: 0.86rem; }
+  .term-heading { font-size: 1.02rem; letter-spacing: 0.05em; }
+  .term-dna { font-size: 1.25rem; }
+  .term-stat-num { font-size: 1.3rem; }
+  .term-title { font-size: 0.8rem; }
+}
+
+/* small screens: allow the terminal to sit flush in the grid */
+@media (max-width: 600px) {
+  .genetic-terminal { margin: 1rem 0 !important; }
+}
+
+/* Respect reduced-motion users */
+@media (prefers-reduced-motion: reduce) {
+  .termscanlines { animation: none; }
+  .term-cursor, .term-cursor-static,
+  .term-line * { animation: none !important; }
+  .term-sep::after { animation: none; }
+}

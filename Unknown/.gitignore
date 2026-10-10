@@ -1,0 +1,73 @@
+# Sensitive Configuration Files
+config.php
+*.env
+.env.local
+.env.production
+
+# API Keys and Secrets
+api-keys.txt
+secrets/
+private/
+
+# Development Files
+.vscode/
+.idea/
+*.log
+debug.log
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup Files
+*.bak
+*.backup
+*~
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# Node Modules (if using npm)
+node_modules/
+package-lock.json
+
+# Build Files
+dist/
+build/
+*.min.js
+*.min.css
+
+# Personal Notes
+notes.txt
+todo.md
+private-notes/
+# Snyk Security Extension - AI Rules (auto-generated)
+.github/instructions/snyk_rules.instructions.md
+
+# Ignore .secret-stack folder
+.secret-stack
+.codersinflow
+.vscode
+node_modules
+.env
+.venv
+.codex
+out
+dist
+*.vsix
+.claude
+CLAUDE.md
+.git
+__pycache__
+*.pyc
+.next
+.github
+
+# Vercel and local environment files
+.vercel/
+.env.*.local
+*.pem
+*.key

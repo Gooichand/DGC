@@ -1,0 +1,1030 @@
+/* Mobile layout corrections — no effect on desktop (min-width: 769px) */
+
+/* ── 1. Base containment ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Prevent any single element from exceeding viewport width */
+  img, svg, video, iframe, canvas {
+    max-width: 100%;
+  }
+
+  img {
+    height: auto;
+  }
+
+  /* Long words / URLs wrap instead of overflowing */
+  h1, h2, h3, h4, p, span, a, li, td, th, label {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
+
+/* ── 2. Section padding ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  #home,
+  #about,
+  #education,
+  #experiences,
+  #technical-skills,
+  #projects,
+  #badges,
+  #certificates,
+  #media,
+  #contact {
+    padding-left: clamp(0.75rem, 4vw, 1.25rem) !important;
+    padding-right: clamp(0.75rem, 4vw, 1.25rem) !important;
+  }
+
+  /* Inner max-width wrappers must not exceed viewport */
+  section[id] > div[style*="max-width"] {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  section[id] {
+    overflow: hidden;
+  }
+}
+
+/* ── 3. Hero section ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  #home {
+    min-height: 0 !important;
+    min-height: 78svh !important;
+    padding-top: clamp(5.5rem, 12vw, 7rem) !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Remove nowrap so the name wraps on narrow screens */
+  #home h1.hero-name {
+    font-size: clamp(1.8rem, 9vw, 2.8rem) !important;
+    white-space: normal !important;
+    line-height: 1.15 !important;
+    overflow-wrap: anywhere;
+  }
+
+  #home .typing-effect {
+    font-size: clamp(1rem, 5vw, 1.4rem) !important;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+
+  /* Button row stacks vertically */
+  #home > div[style*="z-index"] > div[style*="flex"] {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100%;
+    padding: 0 !important;
+  }
+
+  .btn-3d {
+    width: 100% !important;
+    max-width: 320px;
+    padding: 0.85rem 1.5rem !important;
+    font-size: 0.9rem !important;
+    white-space: nowrap;
+  }
+}
+
+/* ── 4. About section — collapse 2-column grid ───────────────────────── */
+@media (max-width: 768px) {
+  /* The about grid uses inline style: grid-template-columns: 1fr 2fr */
+  #about > div > div[style*="grid-template-columns"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  .profile-photo {
+    width: 100% !important;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .profile-photo img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Stats row: 4-column inline grid → 2×2 */
+  #about div[style*="grid-template-columns: 1fr 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .glass-card {
+    padding: 1.25rem 1rem !important;
+    margin: 0.5rem 0 !important;
+    min-width: 0;
+  }
+}
+
+/* ── 5. Navigation ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .forensic-nav .nav-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .nav-menu {
+    width: min(100vw - 1.5rem, 22rem);
+    max-width: calc(100vw - 1.5rem);
+  }
+
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* ── 6. Floating vault button ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .floating-vault-btn {
+    top: 70px !important;
+    right: 10px !important;
+    padding: 8px 16px !important;
+    font-size: 0.75rem !important;
+    gap: 6px !important;
+    z-index: 9998 !important;
+  }
+}
+
+/* ── 7. Projects grid ────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .analysis-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .project-parent {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 340px;
+    /* Disable 3D hover transform on touch */
+    transform: none !important;
+  }
+
+  .project-parent:hover .project-3d-card,
+  .project-parent:hover .project-social-btn,
+  .project-parent:hover .project-logo .circle2,
+  .project-parent:hover .project-logo .circle3,
+  .project-parent:hover .project-logo .circle4,
+  .project-parent:hover .project-logo .circle5 {
+    transform: none !important;
+  }
+
+  .project-content {
+    height: auto !important;
+    min-height: 200px;
+    padding: 3.5rem 1rem 5rem !important;
+    overflow-wrap: anywhere;
+  }
+
+  .project-content .project-title,
+  .project-content .project-text {
+    overflow-wrap: anywhere;
+  }
+
+  .project-bottom {
+    position: absolute !important;
+    bottom: 0.75rem !important;
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    width: auto !important;
+  }
+
+  .project-social-buttons {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* Touch targets */
+  .project-social-btn,
+  .project-view-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ── 8. Flip cards ───────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 320px;
+    height: auto !important;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    min-height: 320px;
+    height: auto !important;
+  }
+}
+
+/* ── 9. Certifications accordion ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .cert-accordion-container,
+  .cert-accordion {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .cert-accordion {
+    height: 300px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    justify-content: flex-start;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .cert-accordion-item {
+    scroll-snap-align: start;
+  }
+
+  .cert-accordion-item.active {
+    width: min(72vw, 260px) !important;
+  }
+
+  .cert-accordion-item:not(.active) {
+    width: 52px !important;
+  }
+
+  .cert-carousel {
+    min-width: 0 !important;
+    position: relative;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  .cert-carousel-track {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    overscroll-behavior-x: contain;
+  }
+
+  .cert-carousel-btn.cert-prev { left: 0.15rem !important; }
+  .cert-carousel-btn.cert-next { right: 0.15rem !important; }
+}
+
+/* ── 10. Experience coverflow ────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .experience-coverflow-filters {
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding: 0 0.15rem 0.35rem;
+    scrollbar-width: none;
+  }
+
+  .experience-coverflow-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .experience-coverflow-viewport {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 2.75rem;
+  }
+
+  .experience-coverflow-arrow.prev { left: 0.35rem !important; }
+  .experience-coverflow-arrow.next { right: 0.35rem !important; }
+
+  .experience-coverflow-dots {
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.2rem 0.25rem;
+    scrollbar-width: none;
+  }
+
+  .experience-coverflow-dots::-webkit-scrollbar {
+    display: none;
+  }
+
+  .experience-coverflow-shell,
+  .experience-coverflow-track {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Filter buttons wrap on very small screens */
+@media (max-width: 540px) {
+  .experience-coverflow-filters {
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+    justify-content: center !important;
+  }
+
+  .experience-coverflow-filter {
+    flex: 1 1 calc(50% - 0.5rem) !important;
+    min-width: 0;
+    max-width: calc(50% - 0.25rem);
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+/* ── 11. Constellation skills — fix giant bottom gap ─────────────────── */
+@media (max-width: 768px) {
+  #technical-skills.constellation-skills-section {
+    padding-bottom: clamp(3rem, 6vw, 4.5rem) !important;
+  }
+
+  .constellation-shell {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1.5rem !important;
+  }
+
+  .constellation-stage {
+    width: min(100%, 520px);
+    min-height: min(84vw, 430px);
+    transform: translateZ(0) !important;
+  }
+
+  .constellation-node {
+    width: clamp(4.8rem, 19vw, 6.4rem) !important;
+  }
+
+  .constellation-node-label {
+    font-size: clamp(0.52rem, 2.15vw, 0.72rem);
+  }
+
+  .constellation-detail-panel {
+    width: 100% !important;
+    transform: none !important;
+  }
+
+  .constellation-intro {
+    transform: none !important;
+    text-align: center;
+  }
+}
+
+/* ── 12. Skill atlas ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .skill-atlas,
+  .skill-atlas-shell {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .skill-atlas-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.6rem !important;
+  }
+
+  .skill-atlas-filters {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    padding-bottom: 0.2rem;
+    scrollbar-width: none;
+  }
+
+  .skill-atlas-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .skill-atlas-controls {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-atlas-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── 13. Education neural path ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .education-neural-shell,
+  .education-neural-stage {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+}
+
+/* ── 14. Contact section ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  #contact > div[style*="max-width"] > div[style*="display: grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .forensic-form,
+  .forensic-form input,
+  .forensic-form textarea,
+  .forensic-form select,
+  .forensic-form button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Prevent iOS zoom on input focus */
+  .form-input,
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 16px !important;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  textarea.form-input {
+    min-height: 120px;
+  }
+}
+
+/* ── 15. Chat widget ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  #chat-window {
+    width: min(350px, calc(100vw - 1.5rem)) !important;
+    max-width: calc(100vw - 1.5rem) !important;
+  }
+
+  .chat-message.assistant .chat-table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+/* ── 16. Decorative layers — pointer-events only ─────────────────────── */
+@media (max-width: 768px) {
+  .floating-particles,
+  .cyber-matrix,
+  .holographic-grid,
+  .digital-rain {
+    pointer-events: none;
+  }
+}
+
+/* ── 17. Touch targets — only interactive elements ───────────────────── */
+@media (max-width: 768px) {
+  .cert-contact-btn,
+  .experience-coverflow-action,
+  .constellation-action,
+  .btn-3d,
+  .nav-link {
+    min-height: 44px;
+  }
+}
+
+/* ── 18. Very small screens (≤390px) ─────────────────────────────────── */
+@media (max-width: 390px) {
+  #home {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  #home h1.hero-name {
+    font-size: clamp(1.5rem, 10vw, 2rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  h2,
+  .section-title,
+  section h2 {
+    font-size: clamp(1.5rem, 9vw, 2rem) !important;
+    overflow-wrap: anywhere;
+  }
+
+  .project-parent {
+    min-height: 360px;
+  }
+
+  .project-content {
+    padding: 3rem 0.85rem 5rem !important;
+  }
+
+  .project-bottom {
+    left: 0.6rem !important;
+    right: 0.6rem !important;
+  }
+
+  .cert-accordion {
+    height: 270px !important;
+  }
+
+  .cert-accordion-item.active {
+    width: 68vw !important;
+  }
+
+  .experience-coverflow-viewport {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .cert-carousel {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
+}
+
+/* ── 19. Tiny screens (≤340px) ───────────────────────────────────────── */
+@media (max-width: 340px) {
+  #home,
+  #about,
+  #education,
+  #experiences,
+  #technical-skills,
+  #projects,
+  #badges,
+  #certificates,
+  #media,
+  #contact {
+    padding-left: 0.6rem !important;
+    padding-right: 0.6rem !important;
+  }
+
+  .project-social-buttons {
+    gap: 0.35rem;
+  }
+
+  .project-social-btn,
+  .project-view-btn {
+    min-width: 0;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+  }
+}
+
+/* ── 20. Reduced motion ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .project-parent:hover .project-3d-card,
+  .project-parent:hover .project-social-btn,
+  .project-parent:hover .project-logo .circle2,
+  .project-parent:hover .project-logo .circle3,
+  .project-parent:hover .project-logo .circle4,
+  .project-parent:hover .project-logo .circle5 {
+    transform: none !important;
+  }
+
+  .cert-accordion,
+  .project-parent,
+  .flip-card {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── 21. Desktop guard — zero effect above 768px ─────────────────────── */
+@media (min-width: 769px) {
+  .mobile-only-layout-marker {
+    display: none;
+  }
+}
+
+/* ── 22. About grid class-based collapse (supplements inline-style override) ── */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ── 23. Certifications section full fix ─────────────────────────────── */
+@media (max-width: 768px) {
+  /* Left text block: remove its min-width so it can shrink */
+  .cert-text-content {
+    min-width: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Description max-width should not exceed viewport */
+  .cert-description {
+    max-width: 100% !important;
+  }
+
+  /* Main cert title scale down */
+  .cert-main-title {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+  }
+
+  /* Right accordion container: remove its min-width */
+  .cert-accordion-container {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Button full width on mobile */
+  .cert-contact-btn {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ── 24. Flip cards — tap to flip on touch devices ───────────────────── */
+@media (max-width: 768px) {
+  /* Remove hover-based flip; use a JS-toggled class instead */
+  .flip-card:hover .flip-card-inner {
+    transform: none;
+  }
+
+  .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Add a tap hint label on small screens */
+  .flip-hint {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ── 25. Gallery / Media section containment ─────────────────────────── */
+@media (max-width: 768px) {
+  #media {
+    overflow: hidden !important;
+  }
+
+  .coverflow-carousel-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .gallery-source {
+    display: none !important; /* data source only, hidden correctly */
+  }
+}
+
+/* ── 26. Contact section inline grid → single column ─────────────────── */
+@media (max-width: 768px) {
+  /* Catch the inline grid-template-columns: 1fr 1fr that can overflow */
+  #contact div[style*="grid-template-columns: 1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Contact info rows: ensure the email address wraps */
+  #contact a[href^="mailto"],
+  #contact a[href^="tel"] {
+    overflow-wrap: break-word !important;
+    word-break: break-all !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ── 27. Badge stack overflow fix ────────────────────────────────────── */
+@media (max-width: 768px) {
+  .badge-stack,
+  .elastic-stack {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+/* ── 28. Section h2 headings — clamp font size ───────────────────────── */
+@media (max-width: 768px) {
+  section h2[style*="font-size: 2.5rem"],
+  section h2[style*="font-size: 1.8rem"] {
+    font-size: clamp(1.3rem, 7vw, 1.8rem) !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* ── 29. Experience notification cards — fix absolute icon on narrow screens */
+@media (max-width: 480px) {
+  .experience-notification {
+    min-height: 16rem;
+  }
+
+  .exp-notititle {
+    font-size: 0.85rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0.85rem !important;
+  }
+
+  .exp-badge {
+    font-size: 0.6rem !important;
+    right: 3rem !important;
+  }
+}
+
+/* ── 30. Skills flip-grid centering on mobile ────────────────────────── */
+@media (max-width: 768px) {
+  .skills-flip-grid {
+    justify-items: center !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .flip-card {
+    width: min(100%, 340px) !important;
+  }
+}
+
+/* ── 31. About section text content overflow guard ───────────────────── */
+@media (max-width: 768px) {
+  #about p,
+  #about li,
+  #about span {
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    max-width: 100% !important;
+  }
+
+  /* Social links in about section */
+  #about a[href] {
+    overflow-wrap: anywhere !important;
+  }
+}
+
+/* ── 32. Certificates carousel section heading ───────────────────────── */
+@media (max-width: 768px) {
+  #certificates h2[style*="font-size: 2.5rem"] {
+    font-size: clamp(1.3rem, 7vw, 1.8rem) !important;
+    margin-bottom: 2rem !important;
+  }
+
+  #media h2[style*="font-size: 2.5rem"],
+  #contact h2[style*="font-size: 2.5rem"] {
+    font-size: clamp(1.3rem, 7vw, 1.8rem) !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* ── 33. Safe-area insets (notch / home-bar devices) ─────────────────── */
+@supports (padding: env(safe-area-inset-top)) {
+  @media (max-width: 768px) {
+    /* Keep the fixed background canvas within the visual viewport */
+    #liquid-chrome-canvas {
+      top: env(safe-area-inset-top, 0px);
+      bottom: env(safe-area-inset-bottom, 0px);
+      height: calc(100vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) !important;
+    }
+
+    /* Chat launcher clears the home-bar / floating nav */
+    #chat-widget-container {
+      bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+    }
+
+    /* Floating expandable nav clears the home-bar */
+    .floating-expandable-nav {
+      bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+    }
+  }
+}
+
+/* ── 34. Chat widget vs floating bottom nav — prevent overlap ────────── */
+@media (max-width: 768px) {
+  #chat-widget-container {
+    z-index: 10001;
+  }
+
+  /* Dock the assistant launcher ABOVE the centered tab bar so the
+     two never collide in the bottom-right corner. */
+  #chat-widget-container {
+    bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  #chat-toggle-btn {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0.55rem 0.75rem !important;
+    font-size: 0.72rem !important;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #chat-window {
+    bottom: calc(100px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* ── 35. Tap feedback & touch ergonomics ─────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a,
+  button,
+  .btn-3d,
+  .nav-link,
+  .nav-tab,
+  .project-view-btn,
+  .project-social-btn,
+  input[type="submit"],
+  .btn-forensic,
+  .cert-contact-btn {
+    touch-action: manipulation;
+  }
+
+  /* Slightly larger default tap area */
+  .floating-expandable-nav .nav-tab {
+    min-height: 42px;
+  }
+}
+
+/* ── 36. Refined font sizing / spacing on small phones ──────────────── */
+@media (max-width: 480px) {
+  .btn-3d {
+    max-width: 100%;
+    font-size: 0.85rem !important;
+    white-space: normal !important;
+  }
+
+  /* Comfortable tap height for the hero action buttons */
+  .btn-3d {
+    min-height: 48px;
+  }
+
+  /* Primary content text stays readable without zoom */
+  #about,
+  #projects,
+  #badges,
+  #certificates,
+  #media,
+  #contact {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  section p,
+  .cert-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* ── 37. Content bottom clearance so floating nav never hides it ─────── */
+@media (max-width: 768px) {
+  body {
+    scroll-padding-top: 1.5rem;
+  }
+
+  #contact {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* ── 38. Experience coverflow DETAIL — responsive case summary ───────── */
+/*
+   Root cause: experience-coverflow.css re-declares the 3-column
+   `.experience-coverflow-detail` grid unconditionally (after the intended
+   mobile media queries), so the "Case summary" column collapses to an
+   extremely narrow width on mobile and its text breaks one character per
+   line. mobile-fixes.css is loaded after that stylesheet, so these
+   overrides restore the intended responsive stacking WITHOUT touching the
+   desktop layout.
+*/
+
+/* Tablet — shrink to two workable columns; Evidence paths flows across */
+@media (max-width: 900px) {
+  .experience-coverflow-detail {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) !important;
+    gap: 1rem !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .experience-coverflow-detail-side,
+  .experience-coverflow-detail-main,
+  .experience-coverflow-detail-actions {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .experience-coverflow-detail-actions {
+    grid-column: 1 / -1 !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  .experience-coverflow-action {
+    flex: 1 1 12rem !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Mobile — stack everything into one full-width column */
+@media (max-width: 680px) {
+  .experience-coverflow-section {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .experience-coverflow-detail {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto !important;
+    gap: 1rem !important;
+    padding: clamp(1rem, 4vw, 1.4rem) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  .experience-coverflow-detail-side,
+  .experience-coverflow-detail-main,
+  .experience-coverflow-detail-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  .experience-coverflow-detail-actions {
+    grid-column: auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .experience-coverflow-detail-main h3,
+  .experience-coverflow-detail-main p,
+  .experience-coverflow-detail-organization,
+  .experience-coverflow-detail-label {
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+
+  /* Keep the uppercase "Case summary" label on a single readable line */
+  .experience-coverflow-detail-main .experience-coverflow-detail-label {
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+
+  .experience-coverflow-evidence {
+    flex-wrap: wrap !important;
+    gap: 0.42rem !important;
+  }
+
+  .experience-coverflow-evidence span {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+  }
+}
+
+/* Very small phones — tighten spacing so nothing overflows */
+@media (max-width: 420px) {
+  .experience-coverflow-detail {
+    padding: 0.9rem !important;
+  }
+
+  .experience-coverflow-evidence span {
+    font-size: 0.72rem !important;
+    padding: 0.32rem 0.45rem !important;
+  }
+}

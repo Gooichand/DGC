@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MHNE - Secret Vault by Gopichand Dandimeni. Classified cybersecurity projects, research, and digital forensics investigations.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gooichand.github.io/Unknown/mhne.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gooichand.github.io/Unknown/mhne.html">
+    <meta property="og:title" content="MHNE - Secret Vault | Gopichand Dandimeni">
+    <meta property="og:description" content="Classified cybersecurity projects, research, and digital forensics investigations by Gopichand Dandimeni.">
+    <meta property="og:image" content="https://gooichand.github.io/Unknown/og-image.svg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gooichand.github.io/Unknown/mhne.html">
+    <meta property="twitter:title" content="MHNE - Secret Vault | Gopichand Dandimeni">
+    <meta property="twitter:description" content="Classified cybersecurity projects and research by Gopichand Dandimeni.">
+    <meta property="twitter:image" content="https://gooichand.github.io/Unknown/og-image.svg">
+    <title>MHNE - Secret Vault | Gopichand Dandimeni</title>
+    <link rel="icon" type="image/x-icon" href="favicon.io/favicon.ico">
+    <link rel="stylesheet" href="mhne.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cormorant-typography.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "MHNE - Secret Vault",
+      "description": "Classified cybersecurity projects and digital forensics research by Gopichand Dandimeni",
+      "url": "https://gooichand.github.io/Unknown/mhne.html",
+      "author": {
+        "@type": "Person",
+        "name": "Gopichand Dandimeni"
+      }
+    }
+    </script>
+</head>
+<body>
+    <div class="mhne-container">
+        <button onclick="history.back()" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </button>
+        
+        <div class="vault-content">
+            <div class="vault-header">
+                <h1 class="vault-title">🔒 MHNE</h1>
+                <p class="vault-subtitle">Secret Vault - Classified Projects & Research</p>
+            </div>
+
+            <div class="hidden-content">
+                <div class="secret-card">
+                    <div class="card-icon"><i class="fas fa-flag"></i></div>
+                    <h3>CTF Writeups</h3>
+                    <p>Advanced capture-the-flag challenge solutions and exploitation techniques</p>
+                    <span class="status-badge classified">CLASSIFIED</span>
+                </div>
+
+                <div class="secret-card">
+                    <div class="card-icon"><i class="fas fa-terminal"></i></div>
+                    <h3>Custom Security Tools</h3>
+                    <p>Proprietary cybersecurity automation scripts and forensic utilities</p>
+                    <span class="status-badge restricted">RESTRICTED</span>
+                </div>
+
+                <div class="secret-card">
+                    <div class="card-icon"><i class="fas fa-bug"></i></div>
+                    <h3>Vulnerability Research</h3>
+                    <p>Zero-day discoveries and responsible disclosure documentation</p>
+                    <span class="status-badge top-secret">TOP SECRET</span>
+                </div>
+
+                <div class="secret-card">
+                    <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Red Team Operations</h3>
+                    <p>Penetration testing methodologies and attack simulation reports</p>
+                    <span class="status-badge classified">CLASSIFIED</span>
+                </div>
+
+                <div class="secret-card">
+                    <div class="card-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Digital Forensics Cases</h3>
+                    <p>Real-world incident response and forensic investigation archives</p>
+                    <span class="status-badge restricted">RESTRICTED</span>
+                </div>
+
+                <div class="secret-card">
+                    <div class="card-icon"><i class="fas fa-shield-virus"></i></div>
+                    <h3>Malware Analysis Lab</h3>
+                    <p>Reverse engineering reports and behavioral analysis of threats</p>
+                    <span class="status-badge top-secret">TOP SECRET</span>
+                </div>
+            </div>
+
+            <div class="vault-footer">
+                <p><i class="fas fa-lock"></i> Access Level: AUTHORIZED PERSONNEL ONLY</p>
+                <p class="timestamp">Last Access: <span id="timestamp"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+        
+        document.querySelectorAll('.secret-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    card.style.transform = 'translateY(-10px)';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

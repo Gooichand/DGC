@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5">
+    <meta name="theme-color" content="#071014">
+    <meta name="description" content="DGC Vault - Gopichand Dandimeni's secure project vault showcasing cybersecurity tools, forensic analysis, and digital investigation projects.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://gooichand.github.io/Unknown/vault.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gooichand.github.io/Unknown/vault.html">
+    <meta property="og:title" content="DGC Vault - Cybersecurity Projects by Gopichand Dandimeni">
+    <meta property="og:description" content="Explore cybersecurity tools, forensic analysis, and digital investigation projects by Gopichand Dandimeni.">
+    <meta property="og:image" content="https://gooichand.github.io/Unknown/og-image.svg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://gooichand.github.io/Unknown/vault.html">
+    <meta property="twitter:title" content="DGC Vault - Cybersecurity Projects by Gopichand Dandimeni">
+    <meta property="twitter:description" content="Explore cybersecurity tools, forensic analysis, and digital investigation projects.">
+    <meta property="twitter:image" content="https://gooichand.github.io/Unknown/og-image.svg">
+    <title>DGC Vault - Cybersecurity Projects by Gopichand Dandimeni</title>
+    <link rel="icon" type="image/x-icon" href="favicon.io/favicon.ico">
+    <link rel="stylesheet" href="forensic-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cormorant-typography.css">
+    <link rel="stylesheet" href="mobile-fixes.css?v=mobile-20260831-v5">
+    <script src="projects-data.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "DGC Vault - Cybersecurity Projects",
+      "description": "Collection of cybersecurity tools, forensic analysis, and digital investigation projects by Gopichand Dandimeni",
+      "url": "https://gooichand.github.io/Unknown/vault.html",
+      "author": {
+        "@type": "Person",
+        "name": "Gopichand Dandimeni"
+      }
+    }
+    </script>
+    <style>
+        /* Starfield Background */
+        .container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        #stars {
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow: 501px 811px #fff, 1450px 1324px #fff, 1093px 1780px #fff, 1469px 678px #fff, 904px 741px #fff, 1160px 781px #fff, 1841px 1962px #fff, 1630px 1667px #fff, 1788px 676px #fff, 367px 1734px #fff, 1343px 156px #fff, 1283px 1142px #fff, 1062px 378px #fff, 1395px 467px #fff, 1017px 1891px #fff, 137px 1114px #fff, 1767px 1403px #fff, 1543px 11px #fff, 1078px 181px #fff, 1189px 1574px #fff;
+            animation: animStar 50s linear infinite;
+        }
+        
+        #stars:after {
+            content: " ";
+            position: absolute;
+            top: 2000px;
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow: 501px 811px #fff, 1450px 1324px #fff, 1093px 1780px #fff, 1469px 678px #fff, 904px 741px #fff, 1160px 781px #fff, 1841px 1962px #fff, 1630px 1667px #fff, 1788px 676px #fff, 367px 1734px #fff, 1343px 156px #fff, 1283px 1142px #fff, 1062px 378px #fff, 1395px 467px #fff, 1017px 1891px #fff, 137px 1114px #fff, 1767px 1403px #fff, 1543px 11px #fff, 1078px 181px #fff, 1189px 1574px #fff;
+        }
+
+        #stars2 {
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: 1925px 1320px #fff, 693px 1778px #fff, 1016px 711px #fff, 1171px 563px #fff, 661px 1919px #fff, 1610px 44px #fff, 1275px 140px #fff, 1208px 1802px #fff, 1473px 1587px #fff, 11px 1117px #fff;
+            animation: animStar 100s linear infinite;
+        }
+        
+        #stars2:after {
+            content: " ";
+            position: absolute;
+            top: 2000px;
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            box-shadow: 1925px 1320px #fff, 693px 1778px #fff, 1016px 711px #fff, 1171px 563px #fff, 661px 1919px #fff, 1610px 44px #fff, 1275px 140px #fff, 1208px 1802px #fff, 1473px 1587px #fff, 11px 1117px #fff;
+        }
+
+        #stars3 {
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            box-shadow: 200px 981px #fff, 1731px 521px #fff, 132px 1039px #fff, 1888px 1547px #fff, 899px 1226px #fff, 1887px 580px #fff, 1548px 1092px #fff, 1626px 689px #fff, 254px 1072px #fff, 1684px 1211px #fff;
+            animation: animStar 150s linear infinite;
+        }
+        
+        #stars3:after {
+            content: " ";
+            position: absolute;
+            top: 2000px;
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            box-shadow: 200px 981px #fff, 1731px 521px #fff, 132px 1039px #fff, 1888px 1547px #fff, 899px 1226px #fff, 1887px 580px #fff, 1548px 1092px #fff, 1626px 689px #fff, 254px 1072px #fff, 1684px 1211px #fff;
+        }
+
+        @keyframes animStar {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-2000px); }
+        }
+        
+        .vault-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vault-access-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(20, 20, 40, 0.95));
+            backdrop-filter: blur(30px);
+            padding: 3rem 2.5rem;
+            max-width: 450px;
+            width: 90%;
+            border: 2px solid #00ff41;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            animation: vaultGlow 3s ease-in-out infinite alternate;
+        }
+        
+        .vault-icon {
+            font-size: 4rem;
+            color: #00ff41;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            animation: lockPulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px #00ff41);
+        }
+        
+        .vault-title {
+            font-family: 'Orbitron', monospace;
+            color: #00ff41;
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px #00ff41, 0 0 40px #00ffff;
+            letter-spacing: 3px;
+            font-weight: 900;
+        }
+        
+        .vault-subtitle {
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 1.2rem;
+            background: rgba(0, 0, 0, 0.9);
+            border: 3px solid #00ff41;
+            border-radius: 12px;
+            color: #ffffff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+        
+        .password-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 500;
+        }
+        
+        .password-input:focus {
+            border-color: #00ffff;
+            box-shadow: 0 0 30px #00ff41, inset 0 0 20px rgba(0, 255, 65, 0.3);
+            outline: none;
+            background: rgba(0, 0, 0, 1);
+        }
+        
+        .password-hint {
+            color: #ffaa00;
+            font-size: 0.95rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 170, 0, 0.2);
+            border: 2px solid #ffaa00;
+            border-radius: 12px;
+            text-shadow: 0 0 10px #ffaa00;
+            font-weight: 700;
+        }
+        
+        .access-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #00ff41, #00ffff);
+            border: none;
+            border-radius: 12px;
+            color: #000000;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
+        }
+        
+        .access-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 50px #00ff41, 0 10px 30px rgba(0, 255, 65, 0.8);
+            background: linear-gradient(135deg, #00ffff, #00ff41);
+        }
+        
+        .error-message {
+            display: none;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(255, 0, 64, 0.3);
+            border: 3px solid #ff0040;
+            border-radius: 12px;
+            animation: errorShake 0.5s ease-in-out;
+            text-shadow: 0 0 10px #ff0040;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        
+        .vault-content {
+            display: none;
+        }
+        
+        .vault-content.unlocked {
+            display: block;
+        }
+        
+        @keyframes vaultGlow {
+            0% { box-shadow: 0 0 40px rgba(0, 255, 65, 0.3); }
+            100% { box-shadow: 0 0 60px rgba(0, 255, 65, 0.5); }
+        }
+        
+        @keyframes lockPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes errorShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        /* Modern List Card Styles */
+        .card-effect {
+            perspective: 1000px;
+        }
+        
+        .collab-card {
+            --card-bg: rgba(10, 10, 20, 0.95);
+            --card-accent: #00ff41;
+            --card-text: #ffffff;
+            --card-shadow: 0 12px 24px rgba(0, 255, 65, 0.15);
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: var(--card-shadow);
+            border: 2px solid #00ff41;
+            font-family: 'Orbitron', monospace;
+            transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        
+        .collab-card:hover {
+            transform: rotateY(5deg) rotateX(5deg) translateZ(10px);
+            box-shadow: 0 30px 60px rgba(0, 255, 65, 0.3);
+        }
+        
+        .card__liquid {
+            position: absolute;
+            top: -80px;
+            left: 0;
+            width: 300px;
+            height: 200px;
+            background: #00ff41;
+            border-radius: 50%;
+            transform: translateZ(-80px);
+            filter: blur(80px);
+            transition: transform 0.7s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        
+        .collab-card:hover .card__liquid {
+            transform: translateZ(-50px) translateY(30px) translateX(-20px) rotate(-20deg) scale(1.2);
+            opacity: 0.6;
+        }
+        
+        .card__shine {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        
+        .collab-card:hover .card__shine {
+            opacity: 1;
+            animation: shine-effect 2s infinite linear;
+        }
+        
+        .card__glow {
+            position: absolute;
+            inset: -15px;
+            background: radial-gradient(circle at 50% 0%, rgba(0, 255, 65, 0.4) 0%, rgba(0, 255, 65, 0) 60%);
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+        }
+        
+        .collab-card:hover .card__glow {
+            opacity: 1;
+        }
+        
+        .card__content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .card__badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #00ff41;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.5s ease 0.2s;
+            letter-spacing: 1px;
+        }
+        
+        .collab-card:hover .card__badge {
+            transform: scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-header h3 {
+            color: #00ff41;
+            font-size: 1.4rem;
+            margin: 0;
+            text-shadow: 0 0 10px #00ff41;
+            letter-spacing: 2px;
+            font-weight: 900;
+            transition: color 0.4s ease-in-out, transform 0.4s ease-in-out;
+            flex: 1;
+        }
+        
+        .collab-card:hover .card-header h3 {
+            color: #00ffff;
+            transform: translateX(3px);
+        }
+        
+        .category-badge {
+            background: linear-gradient(135deg, #00ff41, #00ffff);
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            display: inline-block;
+            white-space: nowrap;
+            letter-spacing: 1px;
+        }
+        
+        .description {
+            color: #ffffff;
+            line-height: 1.7;
+            margin: 0;
+            font-size: 1rem;
+            opacity: 0.95;
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+        
+        .collab-card:hover .description {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        
+        .skills-section, .collab-details {
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-title {
+            color: #ffaa00;
+            font-size: 0.9rem;
+            font-weight: 900;
+            margin-bottom: 0.6rem;
+            text-shadow: 0 0 8px #ffaa00;
+            letter-spacing: 1px;
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+        
+        .skill-tag {
+            background: rgba(0, 255, 65, 0.2);
+            color: #ffffff;
+            padding: 0.4rem 0.9rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            border: 1px solid #00ff41;
+            text-shadow: 0 0 5px #00ff41;
+            font-weight: 700;
+            display: inline-block;
+        }
+        
+        .collab-details p {
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            background: rgba(0, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid #00ffff;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+        }
+        
+        .card-dots {
+            display: none;
+        }
+        
+        @keyframes shine-effect {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+        
+        /* Collaboration Form Styles */
+        .collab-form-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .collab-form-overlay.active {
+            display: flex;
+        }
+        
+        .collab-form-container {
+            position: relative;
+            padding: 2rem;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #00ff41;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .close-btn:hover {
+            color: #00ffff;
+            transform: rotate(90deg);
+        }
+        
+        .form {
+            position: relative;
+        }
+        
+        .wrapper {
+            position: relative;
+            transform: skewY(-14deg);
+        }
+        
+        .input, .form button {
+            width: 100%;
+            height: 65px;
+            position: relative;
+            padding: 12px;
+            border: 2px solid #00ff41;
+            font-size: 1.15rem;
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+        }
+        
+        .form button {
+            background: #00ff41;
+            border: none;
+            color: #000;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .wrapper li, .form button {
+            position: relative;
+            list-style: none;
+            width: 340px;
+            z-index: var(--i);
+            transition: 0.3s;
+            color: white;
+        }
+        
+        .wrapper li::before, .form button::before {
+            position: absolute;
+            content: '';
+            background: #00ff41;
+            top: 0;
+            left: -65px;
+            width: 65px;
+            height: 65px;
+            transform-origin: right;
+            transform: skewY(45deg);
+            transition: 0.3s;
+        }
+        
+        .wrapper li::after, .form button::after {
+            position: absolute;
+            content: '';
+            background: #00ff41;
+            width: 340px;
+            height: 65px;
+            top: -65px;
+            left: 0;
+            transform-origin: bottom;
+            transform: skewX(45deg);
+            transition: 0.3s;
+        }
+        
+        .wrapper li:nth-child(1)::after, .wrapper li:nth-child(1)::before {
+            background-color: #00ff41;
+        }
+        
+        .wrapper li:nth-child(2)::after, .wrapper li:nth-child(2)::before {
+            background-color: #00ffff;
+        }
+        
+        .wrapper li:nth-child(3)::after, .wrapper li:nth-child(3)::before {
+            background-color: #ffaa00;
+        }
+        
+        .wrapper li:nth-child(4)::after, .wrapper li:nth-child(4)::before {
+            background-color: #ff0040;
+        }
+        
+        .wrapper li:nth-child(5)::after, .wrapper li:nth-child(5)::before {
+            background-color: #00ff41;
+        }
+        
+        .wrapper li:nth-child(6)::after, .wrapper li:nth-child(6)::before {
+            background-color: #00ffff;
+        }
+        
+        .wrapper li:nth-child(7)::after, .wrapper li:nth-child(7)::before {
+            background-color: #ffaa00;
+        }
+        
+        .wrapper li:nth-child(8)::after, .wrapper li:nth-child(8)::before {
+            background-color: #ff0040;
+        }
+        
+        li .input {
+            outline: none;
+            border: none;
+            color: #000000;
+            background: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+        }
+        
+        li .input::placeholder {
+            color: #000000;
+            font-weight: 700;
+        }
+        
+        li:nth-child(1) .input {
+            background: #d8f7d8;
+        }
+        
+        li:nth-child(2) .input {
+            background: #d8f7f7;
+        }
+        
+        li:nth-child(3) .input {
+            background: #f7f0d8;
+        }
+        
+        li:nth-child(4) .input {
+            background: #f7d8d8;
+        }
+        
+        li:nth-child(5) .input {
+            background: #d8f7d8;
+        }
+        
+        li:nth-child(6) .input {
+            background: #d8f7f7;
+        }
+        
+        li:nth-child(7) .input {
+            background: #f7f0d8;
+        }
+        
+        li:nth-child(8) .input {
+            background: #f7d8d8;
+        }
+        
+        .file-input-wrapper {
+            position: relative;
+            list-style: none;
+            width: 340px;
+            z-index: var(--i);
+            transition: 0.3s;
+        }
+        
+        .file-input-wrapper::before {
+            position: absolute;
+            content: '';
+            background: #00ff41;
+            top: 0;
+            left: -65px;
+            width: 65px;
+            height: 65px;
+            transform-origin: right;
+            transform: skewY(45deg);
+            transition: 0.3s;
+        }
+        
+        .file-input-wrapper::after {
+            position: absolute;
+            content: '';
+            background: #00ff41;
+            width: 340px;
+            height: 65px;
+            top: -65px;
+            left: 0;
+            transform-origin: bottom;
+            transform: skewX(45deg);
+            transition: 0.3s;
+        }
+        
+        .file-input-wrapper:nth-child(9)::after, .file-input-wrapper:nth-child(9)::before {
+            background-color: #00ff41;
+        }
+        
+        .file-input-wrapper:hover {
+            transform: translateX(-20px);
+        }
+        
+        .file-input-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 65px;
+            padding: 12px;
+            background: #d8f7d8;
+            border: 2px solid #00ff41;
+            color: #000000;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            font-size: 1rem;
+            font-family: 'Orbitron', monospace;
+            transition: all 0.3s ease;
+        }
+        
+        .file-input-label:hover {
+            background: #c8f7c8;
+            border-color: #00ffff;
+        }
+        
+        #collabResumePdf {
+            display: none;
+        }
+        
+        .file-name {
+            display: block;
+            color: #000000;
+            font-size: 1rem;
+            margin-top: 0.4rem;
+            font-weight: 800;
+            word-break: break-word;
+            max-width: 300px;
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        li:nth-child(1) .input:focus {
+            outline: none;
+            border: 3.5px solid #00ff41;
+        }
+        
+        li:nth-child(2) .input:focus {
+            outline: none;
+            border: 3.5px solid #00ffff;
+        }
+        
+        li:nth-child(3) .input:focus {
+            outline: none;
+            border: 3.5px solid #ffaa00;
+        }
+        
+        li:nth-child(4) .input:focus {
+            outline: none;
+            border: 3.5px solid #ff0040;
+        }
+        
+        li:nth-child(5) .input:focus {
+            outline: none;
+            border: 3.5px solid #00ff41;
+        }
+        
+        li:nth-child(6) .input:focus {
+            outline: none;
+            border: 3.5px solid #00ffff;
+        }
+        
+        li:nth-child(7) .input:focus {
+            outline: none;
+            border: 3.5px solid #ffaa00;
+        }
+        
+        li:nth-child(8) .input:focus {
+            outline: none;
+            border: 3.5px solid #ff0040;
+        }
+        
+        .wrapper li:hover, .form button:hover {
+            transform: translateX(-20px);
+        }
+        
+        .form button:hover, .form button:hover::before, .form button:hover::after {
+            background: #00ffff;
+            color: #000;
+        }
+        
+        .form button:active {
+            transform: translateX(0px);
+        }
+        
+        .form-success {
+            display: none;
+            text-align: center;
+            color: #00ff41;
+            padding: 2rem;
+        }
+        
+        .form-success.show {
+            display: block;
+        }
+        
+        .form-success i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px #00ff41;
+        }
+        
+        .form-success p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        
+        .card-actions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 255, 65, 0.3);
+        }
+        
+        /* Glitch Button Styles */
+        .action-btn,
+        .action-btn::after {
+            padding: 16px 20px;
+            font-size: 14px;
+            background: linear-gradient(45deg, transparent 5%, #00ff41 5%);
+            border: 0;
+            color: #fff;
+            letter-spacing: 3px;
+            line-height: 1;
+            box-shadow: 6px 0px 0px #00ffff;
+            outline: transparent;
+            position: relative;
+            font-family: 'Orbitron', monospace;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .action-btn::after {
+            --slice-0: inset(50% 50% 50% 50%);
+            --slice-1: inset(80% -6px 0 0);
+            --slice-2: inset(50% -6px 30% 0);
+            --slice-3: inset(10% -6px 85% 0);
+            --slice-4: inset(40% -6px 43% 0);
+            --slice-5: inset(80% -6px 5% 0);
+            content: attr(data-text);
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 3%, #00ffff 3%, #00ffff 5%, #00ff41 5%);
+            text-shadow: -3px -3px 0px #ffaa00, 3px 3px 0px #00ffff;
+            clip-path: var(--slice-0);
+        }
+        
+        .action-btn:hover::after {
+            animation: 1s glitch-anim;
+            animation-timing-function: steps(2, end);
+        }
+        
+        @keyframes glitch-anim {
+            0% {
+                clip-path: var(--slice-1);
+                transform: translate(-20px, -10px);
+            }
+            10% {
+                clip-path: var(--slice-3);
+                transform: translate(10px, 10px);
+            }
+            20% {
+                clip-path: var(--slice-1);
+                transform: translate(-10px, 10px);
+            }
+            30% {
+                clip-path: var(--slice-3);
+                transform: translate(0px, 5px);
+            }
+            40% {
+                clip-path: var(--slice-2);
+                transform: translate(-5px, 0px);
+            }
+            50% {
+                clip-path: var(--slice-3);
+                transform: translate(5px, 0px);
+            }
+            60% {
+                clip-path: var(--slice-4);
+                transform: translate(5px, 10px);
+            }
+            70% {
+                clip-path: var(--slice-2);
+                transform: translate(-10px, 10px);
+            }
+            80% {
+                clip-path: var(--slice-5);
+                transform: translate(20px, -10px);
+            }
+            90% {
+                clip-path: var(--slice-1);
+                transform: translate(-10px, 0px);
+            }
+            100% {
+                clip-path: var(--slice-1);
+                transform: translate(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .collab-card {
+                transform: skewX(0deg);
+            }
+            
+            .action-btn {
+                min-width: 100%;
+            }
+        }
+        
+        /* Vault Navigation Styles */
+        .vault-nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .radio-wrapper {
+            position: relative;
+            height: 45px;
+            width: 140px;
+            margin: 3px;
+        }
+        
+        .radio-wrapper .input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0;
+        }
+        
+        .btn {
+            --primary: #ff184c;
+            --shadow-primary: #fded00;
+            --color: white;
+            --font-size: 10px;
+            --shadow-primary-hue: 180;
+            --shadow-secondary-hue: 60;
+            --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
+            --clip: polygon(11% 0, 95% 0, 100% 25%, 90% 90%, 95% 90%, 85% 90%, 85% 100%, 7% 100%, 0 80%);
+            --border: 5px;
+            --shimmy-distance: 5;
+            --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+            --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+            --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+            --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+            --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+            --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+            --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+            color: var(--color);
+            text-transform: uppercase;
+            font-size: var(--font-size);
+            letter-spacing: 3px;
+            position: relative;
+            font-weight: 900;
+            width: 100%;
+            height: 100%;
+            line-height: 45px;
+            text-align: center;
+            transition: background 0.2s, 0.3s;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .input:checked + .btn {
+            --primary: #00ff41;
+            --shadow-primary: #00ffff;
+        }
+        
+        .input:hover + .btn {
+            --primary: #cc133c;
+            --font-size: 11px;
+        }
+        
+        .btn:after, .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            clip-path: var(--clip);
+            z-index: -1;
+        }
+        
+        .btn:before {
+            background: var(--shadow-primary);
+            transform: translate(var(--border), 0);
+        }
+        
+        .btn:after {
+            background: var(--primary);
+        }
+        
+        .btn__glitch {
+            position: absolute;
+            top: calc(var(--border) * -1);
+            left: calc(var(--border) * -1);
+            right: calc(var(--border) * -1);
+            bottom: calc(var(--border) * -1);
+            background: var(--shadow-primary);
+            text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+            clip-path: var(--clip);
+            animation: glitch 2s infinite;
+            display: none;
+        }
+        
+        .input:hover + .btn .btn__glitch {
+            display: block;
+        }
+        
+        .input:checked + .btn .btn__glitch {
+            display: block;
+            animation: glitch 5s infinite;
+        }
+        
+        .btn__glitch:before {
+            content: '';
+            position: absolute;
+            top: calc(var(--border) * 1);
+            right: calc(var(--border) * 1);
+            bottom: calc(var(--border) * 1);
+            left: calc(var(--border) * 1);
+            clip-path: var(--clip);
+            background: var(--primary);
+            z-index: -1;
+        }
+        
+        @keyframes glitch {
+            0% { clip-path: var(--clip-one); }
+            2%, 8% {
+                clip-path: var(--clip-two);
+                transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+            }
+            6% {
+                clip-path: var(--clip-two);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            9% {
+                clip-path: var(--clip-two);
+                transform: translate(0, 0);
+            }
+            10% {
+                clip-path: var(--clip-three);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            13% {
+                clip-path: var(--clip-three);
+                transform: translate(0, 0);
+            }
+            14%, 21% {
+                clip-path: var(--clip-four);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            25% {
+                clip-path: var(--clip-five);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            30% {
+                clip-path: var(--clip-five);
+                transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+            }
+            35%, 45% {
+                clip-path: var(--clip-six);
+                transform: translate(calc(var(--shimmy-distance) * -1%));
+            }
+            40% {
+                clip-path: var(--clip-six);
+                transform: translate(calc(var(--shimmy-distance) * 1%));
+            }
+            50% {
+                clip-path: var(--clip-six);
+                transform: translate(0, 0);
+            }
+            55% {
+                clip-path: var(--clip-seven);
+                transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+            }
+            60% {
+                clip-path: var(--clip-seven);
+                transform: translate(0, 0);
+            }
+            31%, 61%, 100% { clip-path: var(--clip-four); }
+        }
+        
+        .number {
+            background: var(--shadow-primary);
+            color: #000;
+            font-size: 7px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: absolute;
+            width: 18px;
+            height: 8px;
+            top: 0;
+            left: 85%;
+            line-height: 8px;
+        }
+        
+        .vault-section {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .glass-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(20, 20, 40, 0.95)) !important;
+            border: 2px solid #00ff41 !important;
+            border-radius: 20px !important;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2) !important;
+        }
+        
+        .glass-card h2 {
+            color: #00ff41 !important;
+            text-shadow: 0 0 10px #00ff41 !important;
+            letter-spacing: 3px !important;
+            font-weight: 900 !important;
+            font-size: 2rem !important;
+        }
+        
+        .glass-card h1 {
+            color: #00ff41 !important;
+            text-shadow: 0 0 10px #00ff41 !important;
+            letter-spacing: 3px !important;
+            font-weight: 900 !important;
+        }
+        
+        .glass-card p {
+            color: #ffffff !important;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6) !important;
+            font-weight: 500 !important;
+            font-size: 1rem !important;
+        }
+        
+        /* Tool Card Styles */
+        .tool-card {
+            width: 100%;
+            border-radius: 20px;
+            background: #1b233d;
+            padding: 5px;
+            overflow: hidden;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .tool-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .tool-card .top-section {
+            height: 150px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(45deg, rgb(0, 255, 65) 0%, rgb(0, 255, 255) 100%);
+            position: relative;
+        }
+        
+        .tool-card .top-section .border {
+            border-bottom-right-radius: 10px;
+            height: 30px;
+            width: 130px;
+            background: #1b233d;
+            position: relative;
+            transform: skew(-40deg);
+            box-shadow: -10px -10px 0 0 #1b233d;
+        }
+        
+        .tool-card .top-section .border::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            top: 0;
+            right: -15px;
+            background: rgba(255, 255, 255, 0);
+            border-top-left-radius: 10px;
+            box-shadow: -5px -5px 0 2px #1b233d;
+        }
+        
+        .tool-card .top-section::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background: rgba(255, 255, 255, 0);
+            height: 15px;
+            width: 15px;
+            border-top-left-radius: 15px;
+            box-shadow: -5px -5px 0 2px #1b233d;
+        }
+        
+        .tool-card .top-section .icons {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .tool-card .top-section .icons .tool-id {
+            height: 100%;
+            padding: 7px 0 7px 15px;
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 1rem;
+            font-family: 'Orbitron', monospace;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .tool-card .top-section .icons .tool-icon {
+            height: 100%;
+            padding: 8px 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tool-card .top-section .icons .tool-icon i {
+            font-size: 1.2rem;
+            color: #1b233d;
+        }
+        
+        .tool-card .bottom-section {
+            margin-top: 15px;
+            padding: 10px 5px;
+        }
+        
+        .tool-card .bottom-section .title {
+            display: block;
+            font-size: 15px;
+            font-weight: bolder;
+            color: white;
+            text-align: center;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .tool-card .bottom-section .description {
+            display: block;
+            font-size: 11px;
+            color: rgba(170, 222, 243, 0.9);
+            text-align: center;
+            line-height: 1.5;
+            padding: 0 10px;
+            min-height: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            #toolsGrid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="vault-container">
+        <!-- Starfield Background -->
+        <div class="container">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+        </div>
+        
+        <div class="cyber-matrix"></div>
+        <div class="floating-particles"></div>
+        <div class="holographic-grid"></div>
+        
+        <!-- Password Access Form -->
+        <div class="vault-access-card" id="accessCard">
+            <div class="vault-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h1 class="vault-title">SECURE VAULT</h1>
+            <p class="vault-subtitle">Enter the dynamic password to access</p>
+            <div class="password-hint" id="passwordHint">
+                <i class="fas fa-info-circle"></i> HHMM
+            </div>
+            <input type="password" class="password-input" id="passwordInput" placeholder="Enter password..." aria-label="Enter four-digit vault password" maxlength="4">
+            <button class="access-btn" onclick="checkPassword()">
+                <i class="fas fa-unlock"></i> ACCESS VAULT
+            </button>
+            <div class="error-message" id="errorMessage">
+                <i class="fas fa-exclamation-triangle"></i> Invalid password! Try again.
+            </div>
+        </div>
+        
+        <!-- Vault Content (Hidden until unlocked) -->
+        <div class="vault-content" id="vaultContent" style="width: 100%; padding: 2rem;">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <!-- Navigation Bar -->
+                <div class="vault-nav-container">
+                    <div class="radio-wrapper">
+                        <input class="input" name="vault-section" id="section-collab" type="radio" checked="true">
+                        <div class="btn">
+                            <span aria-hidden="">_</span>COLLABORATION
+                            <span class="btn__glitch" aria-hidden="">_COLLABORATION🤝</span>
+                            <label class="number">01</label>
+                        </div>
+                    </div>
+                    <div class="radio-wrapper">
+                        <input class="input" name="vault-section" id="section-tools" type="radio">
+                        <div class="btn">
+                            _TOOLS<span aria-hidden="">_</span>
+                            <span class="btn__glitch" aria-hidden="">_T_O_O_L_S_</span>
+                            <label class="number">02</label>
+                        </div>
+                    </div>
+                    <div class="radio-wrapper">
+                        <input class="input" name="vault-section" id="section-blogs" type="radio">
+                        <div class="btn">
+                            BLOGS<span aria-hidden=""></span>
+                            <span class="btn__glitch" aria-hidden="">BLOGS_📝</span>
+                            <label class="number">03</label>
+                        </div>
+                    </div>
+                    <div class="radio-wrapper">
+                        <input class="input" name="vault-section" id="section-back" type="radio" onchange="goBackToMain()">
+                        <div class="btn">
+                            <span aria-hidden="">_</span>BACK<span aria-hidden="">_</span>
+                            <span class="btn__glitch" aria-hidden="">_BACK_HOME_</span>
+                            <label class="number">04</label>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <!-- Collaboration Section -->
+                <div class="vault-section" id="collaboration-section">
+                    <h2 style="font-family: 'Orbitron', monospace; color: #00ff41; text-align: center; margin-bottom: 2rem; font-size: 1.8rem; text-shadow: 0 0 10px #00ff41;">
+                        <i class="fas fa-handshake"></i> OPEN FOR COLLABORATION
+                    </h2>
+                    <div id="collaborationProjects" style="display: flex; flex-direction: column; gap: 1.5rem; padding: 1rem;">
+                        <!-- Projects will be loaded here by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Tools Section -->
+                <div class="vault-section" id="tools-section" style="display: none;">
+                    <h2 style="font-family: 'Orbitron', monospace; color: #00ff41; text-align: center; margin-bottom: 2rem; font-size: 1.8rem; text-shadow: 0 0 10px #00ff41;">
+                        <i class="fas fa-tools"></i> FORENSIC TOOLS ARSENAL
+                    </h2>
+                    <div id="toolsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; padding: 1rem;">
+                        <!-- Tools will be loaded here by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Blogs Section -->
+                <div class="vault-section" id="blogs-section" style="display: none;">
+                    <h2 style="font-family: 'Orbitron', monospace; color: #00ff41; text-align: center; margin-bottom: 2rem; font-size: 1.8rem; text-shadow: 0 0 10px #00ff41;">
+                        <i class="fas fa-blog"></i> TECHNICAL BLOGS
+                    </h2>
+                    <div style="text-align: center; padding: 3rem; color: #00ffff; text-shadow: 0 0 5px #00ffff;">
+                        <i class="fas fa-pen-fancy" style="font-size: 3rem; margin-bottom: 1rem; text-shadow: 0 0 10px #00ffff;"></i>
+                        <p style="text-shadow: 0 0 5px #00ffff; font-weight: 500;">Blogs section coming soon...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Collaboration Form Modal -->
+        <div class="collab-form-overlay" id="collabFormOverlay">
+            <div class="collab-form-container">
+                <button class="close-btn" type="button" aria-label="Close collaboration form" onclick="closeCollabForm()">&times;</button>
+                
+                <div id="formContent">
+                    <form class="form" id="collabForm" onsubmit="return handleFormSubmit(event)">
+                        <ul class="wrapper">
+                            <li style="--i:9"><input class="input" type="text" id="collabName" name="Name" placeholder="Name *" aria-label="Your name" required></li>
+                            <li style="--i:8"><input class="input" type="tel" id="collabPhone" name="Phone" placeholder="Phone Number *" aria-label="Your phone number" required></li>
+                            <li style="--i:7"><input class="input" type="email" id="collabEmail" name="Email" placeholder="Email *" aria-label="Your email address" required></li>
+                            <li style="--i:6"><input class="input" type="url" id="collabLinkedIn" name="LinkedIn" placeholder="LinkedIn Profile" aria-label="LinkedIn profile URL"></li>
+                            <li style="--i:5"><input class="input" type="text" id="collabResume" name="Resume_Link" placeholder="Resume/Portfolio Link" aria-label="Resume or portfolio link"></li>
+                            <li style="--i:4" class="file-input-wrapper">
+                                <label for="collabResumePdf" class="file-input-label">
+                                    <i class="fas fa-file-pdf"></i> Upload Resume PDF
+                                    <span class="file-name" id="fileName"></span>
+                                </label>
+                                <input type="file" id="collabResumePdf" name="attachment" accept=".pdf" aria-label="Upload resume PDF" onchange="handleFileSelect(event)">
+                            </li>
+                            <li style="--i:3"><input class="input" type="text" id="collabProjectName" name="Project_Name" placeholder="Project Name" aria-label="Project name" readonly></li>
+                            <li style="--i:2"><input class="input" type="text" id="collabProjectId" name="Project_ID" placeholder="Project ID: " aria-label="Project ID" readonly></li>
+                            <li style="--i:1"><textarea class="input" id="collabMessage" name="Message" placeholder="Message (Optional)" aria-label="Collaboration message" style="resize: none; padding: 10px;"></textarea></li>
+                            <button style="--i:0" type="submit" aria-label="Open your email app to send collaboration request">SUBMIT</button>
+                        </ul>
+                    </form>
+                </div>
+                
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Thank you for your interest!</p>
+                    <p>We'll review your application and get back to you soon.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Handle file selection
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            const fileName = document.getElementById('fileName');
+            
+            if (file) {
+                if (file.type !== 'application/pdf') {
+                    alert('❌ Please select a PDF file only');
+                    event.target.value = '';
+                    fileName.textContent = '';
+                    return;
+                }
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('❌ File size must be less than 5MB');
+                    event.target.value = '';
+                    fileName.textContent = '';
+                    return;
+                }
+                fileName.textContent = '✓ ' + file.name;
+            } else {
+                fileName.textContent = '';
+            }
+        }
+        
+        // Real-time validation for inputs
+        document.addEventListener('DOMContentLoaded', function() {
+            // Phone validation on input
+            document.getElementById('collabPhone').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/[^0-9+\s-]/g, '');
+                e.target.value = value;
+            });
+            
+            // Name validation on input (only letters and spaces)
+            document.getElementById('collabName').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/[^a-zA-Z\s]/g, '');
+                e.target.value = value;
+            });
+            
+            // Email validation on blur
+            document.getElementById('collabEmail').addEventListener('blur', function(e) {
+                const email = e.target.value.trim();
+                const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (email && !emailRegex.test(email)) {
+                    e.target.style.borderColor = '#ff0040';
+                    e.target.style.borderWidth = '3px';
+                } else if (email) {
+                    e.target.style.borderColor = '#00ff41';
+                    e.target.style.borderWidth = '3px';
+                }
+            });
+            
+            // LinkedIn validation on blur
+            document.getElementById('collabLinkedIn').addEventListener('blur', function(e) {
+                const linkedin = e.target.value.trim();
+                const linkedinRegex = /^(https?:\/\/)?(www\.)?linkedin\.com\/(in\/[a-zA-Z0-9_-]+\/?|company\/[a-zA-Z0-9_-]+\/?)$/;
+                if (linkedin && !linkedinRegex.test(linkedin)) {
+                    e.target.style.borderColor = '#ff0040';
+                    e.target.style.borderWidth = '3px';
+                } else if (linkedin) {
+                    e.target.style.borderColor = '#00ff41';
+                    e.target.style.borderWidth = '3px';
+                }
+            });
+            
+            // Resume URL - no validation (completely optional)
+            document.getElementById('collabResume').addEventListener('blur', function(e) {
+                // No validation needed - user can enter anything or leave empty
+            });
+            
+            // Phone validation on blur
+            document.getElementById('collabPhone').addEventListener('blur', function(e) {
+                const phone = e.target.value.trim();
+                const phoneRegex = /^(\+91[\s-]?)?[6-9]\d{9}$/;
+                if (phone && !phoneRegex.test(phone.replace(/[\s-]/g, ''))) {
+                    e.target.style.borderColor = '#ff0040';
+                    e.target.style.borderWidth = '3px';
+                } else if (phone) {
+                    e.target.style.borderColor = '#00ff41';
+                    e.target.style.borderWidth = '3px';
+                }
+            });
+        });
+        
+function openCollabForm(projectId, projectTitle) {
+            document.getElementById('collabProjectName').value = projectTitle;
+            document.getElementById('collabProjectId').value = 'ID: ' + projectId;
+            document.getElementById('collabFormOverlay').classList.add('active');
+            document.getElementById('formContent').style.display = 'block';
+            document.getElementById('formSuccess').classList.remove('show');
+        }
+        
+        function closeCollabForm() {
+            document.getElementById('collabFormOverlay').classList.remove('active');
+            document.getElementById('collabForm').reset();
+        }
+        
+        // Static-site fallback: open a pre-filled draft without sending data automatically.
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            if (!validateForm()) {
+                return false;
+            }
+
+            const form = document.getElementById('collabForm');
+            const formData = new FormData(form);
+            const attachment = document.getElementById('collabResumePdf').files.length > 0
+                ? 'A resume PDF was selected. Please attach it manually to the email draft.'
+                : 'No resume PDF was selected.';
+            const subject = encodeURIComponent(`Collaboration request: ${formData.get('Project_Name') || 'Portfolio project'}`);
+            const body = encodeURIComponent([
+                `Name: ${formData.get('Name') || ''}`,
+                `Phone: ${formData.get('Phone') || ''}`,
+                `Email: ${formData.get('Email') || ''}`,
+                `LinkedIn: ${formData.get('LinkedIn') || ''}`,
+                `Resume/Portfolio: ${formData.get('Resume_Link') || ''}`,
+                `Project: ${formData.get('Project_Name') || ''}`,
+                `Project ID: ${formData.get('Project_ID') || ''}`,
+                `Message: ${formData.get('Message') || ''}`,
+                '',
+                attachment,
+            ].join('\\n'));
+
+            window.location.href = `mailto:DGC2MHNE@proton.me?subject=${subject}&body=${body}`;
+            document.getElementById('formContent').style.display = 'none';
+            document.getElementById('formSuccess').classList.add('show');
+            document.getElementById('formSuccess').querySelector('p:nth-of-type(2)').textContent = 'Your email draft is ready. Attach any selected PDF before sending.';
+            return false;
+        }
+        
+        function validateForm() {
+            // Get all form values
+            const name = document.getElementById('collabName').value.trim();
+            const phone = document.getElementById('collabPhone').value.trim();
+            const email = document.getElementById('collabEmail').value.trim();
+            const linkedin = document.getElementById('collabLinkedIn').value.trim();
+            const resume = document.getElementById('collabResume').value.trim();
+            
+            // Validate Name (at least 2 characters, only letters and spaces)
+            if (name.length < 2) {
+                alert('❌ Name must be at least 2 characters long');
+                document.getElementById('collabName').focus();
+                return false;
+            }
+            
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                alert('❌ Name should contain only letters and spaces');
+                document.getElementById('collabName').focus();
+                return false;
+            }
+            
+            // Validate Phone Number (10 digits, can start with +91 or just 10 digits)
+            const phoneRegex = /^(\+91[\s-]?)?[6-9]\d{9}$/;
+            if (!phoneRegex.test(phone.replace(/[\s-]/g, ''))) {
+                alert('❌ Please enter a valid 10-digit phone number\nFormat: 9876543210 or +91 9876543210');
+                document.getElementById('collabPhone').focus();
+                return false;
+            }
+            
+            // Validate Email
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert('❌ Please enter a valid email address\nExample: user@example.com');
+                document.getElementById('collabEmail').focus();
+                return false;
+            }
+            
+            // Validate LinkedIn URL (optional but must be valid if provided)
+            if (linkedin) {
+                const linkedinRegex = /^(https?:\/\/)?(www\.)?linkedin\.com\/(in\/[a-zA-Z0-9_-]+\/?|company\/[a-zA-Z0-9_-]+\/?)$/;
+                if (!linkedinRegex.test(linkedin)) {
+                    alert('❌ Please enter a valid LinkedIn profile URL\nExample: https://www.linkedin.com/in/username');
+                    document.getElementById('collabLinkedIn').focus();
+                    return false;
+                }
+            }
+            
+            // Validate Resume/Portfolio Link (completely optional, no validation needed)
+            // User can leave it empty or provide any text/link
+            
+            // Check if at least one of LinkedIn or PDF is provided
+            const fileInput = document.getElementById('collabResumePdf');
+            const hasPdf = fileInput.files.length > 0;
+            
+            if (!linkedin && !hasPdf) {
+                alert('❌ Please provide at least one of the following:\n• LinkedIn Profile\n• Resume PDF');
+                document.getElementById('collabLinkedIn').focus();
+                return false;
+            }
+            
+            return true;
+        }
+        
+
+        // Close form when clicking outside
+        document.getElementById('collabFormOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCollabForm();
+            }
+        });
+        
+        // Load collaboration projects
+        function loadCollaborationProjects() {
+            const container = document.getElementById('collaborationProjects');
+            const collabProjects = projectsData.filter(p => p.openForCollaboration);
+            
+            if (collabProjects.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No projects open for collaboration at the moment.</p>';
+                return;
+            }
+            
+            container.innerHTML = collabProjects.map(project => `
+                <div class="card-effect">
+                    <div class="collab-card">
+                        <div class="card__liquid"></div>
+                        <div class="card__shine"></div>
+                        <div class="card__glow"></div>
+                        
+                        <div class="card__content">
+                            <div class="card__badge">${project.category}</div>
+                            
+                            <div class="card-header">
+                                <h3>${project.title}</h3>
+                            </div>
+                            
+                            <p class="description">${project.description}</p>
+                            
+                            <div class="skills-section">
+                                <div class="section-title"><i class="fas fa-tools"></i> SKILLS</div>
+                                <div class="skills-tags">
+                                    ${project.skillsNeeded.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="collab-details">
+                                <div class="section-title"><i class="fas fa-info-circle"></i> DETAILS</div>
+                                <p>${project.collaborationDetails}</p>
+                            </div>
+                            
+                            <div class="card-actions">
+                                <button onclick="openCollabForm('${project.id}', '${project.title}')" class="action-btn" data-text="INTERESTED">
+                                    <i class="fas fa-paper-plane"></i> INTERESTED
+                                </button>
+                                ${project.github ? `
+                                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="action-btn" data-text="CODE">
+                                        <i class="fab fa-github"></i> CODE
+                                    </a>
+                                ` : ''}
+                                ${project.live ? `
+                                    <a href="${project.live}" target="_blank" rel="noopener noreferrer" class="action-btn" data-text="DEMO">
+                                        <i class="fas fa-external-link-alt"></i> DEMO
+                                    </a>
+                                ` : ''}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Load forensic tools
+        function loadForensicTools() {
+            const toolsData = [
+                {
+                    id: 'BT1A',
+                    name: 'Belkasoft Triage',
+                    description: 'Digital forensics triage—quickly collects evidence from systems during investigations',
+                    icon: 'fa-shield-alt'
+                },
+                {
+                    id: 'BH2V',
+                    name: 'BrowsingHistoryView',
+                    description: 'Extracts and displays web browser history from Chrome, Firefox, Edge, etc.',
+                    icon: 'fa-history'
+                },
+                {
+                    id: 'CP3X',
+                    name: 'CurrPorts',
+                    description: 'Shows active TCP/UDP connections and which programs use them',
+                    icon: 'fa-network-wired'
+                },
+                {
+                    id: 'DP4K',
+                    name: 'DialupPass',
+                    description: 'Recovers saved dial-up networking passwords',
+                    icon: 'fa-key'
+                },
+                {
+                    id: 'EX5T',
+                    name: 'ExifTool',
+                    description: 'Reads/writes metadata from images, videos, PDFs (EXIF, GPS, timestamps)',
+                    icon: 'fa-camera'
+                },
+                {
+                    id: 'FF6M',
+                    name: 'FFmpeg',
+                    description: 'Media conversion & processing powerhouse (video/audio manipulation)',
+                    icon: 'fa-film'
+                },
+                {
+                    id: 'HM7F',
+                    name: 'HashMyFiles',
+                    description: 'Calculates MD5, SHA1, SHA256 hashes for file integrity verification',
+                    icon: 'fa-hashtag'
+                },
+                {
+                    id: 'IE8P',
+                    name: 'IEPV',
+                    description: 'Internet Explorer password viewer—recovers saved IE credentials',
+                    icon: 'fa-unlock-alt'
+                },
+                {
+                    id: 'IP9N',
+                    name: 'IPNetInfo',
+                    description: 'Displays detailed network connection info (IPs, ports, protocols)',
+                    icon: 'fa-server'
+                },
+                {
+                    id: 'LA0V',
+                    name: 'LastActivityView',
+                    description: 'Creates timeline of system activity (logins, app launches, USB connections)',
+                    icon: 'fa-clock'
+                },
+                {
+                    id: 'PK1Y',
+                    name: 'ProduKey',
+                    description: 'Recovers Windows & Office product keys from registry',
+                    icon: 'fa-windows'
+                },
+                {
+                    id: 'RC2V',
+                    name: 'RegistryChangesView',
+                    description: 'Monitors and logs registry changes over time',
+                    icon: 'fa-database'
+                },
+                {
+                    id: 'UD3V',
+                    name: 'USBDeview',
+                    description: 'Lists all USB devices ever connected to the system',
+                    icon: 'fa-usb'
+                },
+                {
+                    id: 'WP4V',
+                    name: 'WebBrowserPassView',
+                    description: 'Recovers saved passwords from browsers (Chrome, Firefox, Opera, etc.)',
+                    icon: 'fa-globe'
+                },
+                {
+                    id: 'WK5V',
+                    name: 'WirelessKeyView',
+                    description: 'Extracts saved WiFi network passwords from Windows',
+                    icon: 'fa-wifi'
+                },
+                {
+                    id: 'PR6T',
+                    name: 'Praat 6441',
+                    description: 'Audio analysis software for linguistics and research purposes',
+                    icon: 'fa-microphone'
+                }
+            ];
+            
+            const container = document.getElementById('toolsGrid');
+            
+            container.innerHTML = toolsData.map(tool => `
+                <div class="tool-card">
+                    <div class="top-section">
+                        <div class="border"></div>
+                        <div class="icons">
+                            <div class="tool-id">${tool.id}</div>
+                            <div class="tool-icon">
+                                <i class="fas ${tool.icon}"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-section">
+                        <span class="title">${tool.name}</span>
+                        <span class="description">${tool.description}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function checkPassword() {
+            const input = document.getElementById('passwordInput');
+            const errorMsg = document.getElementById('errorMessage');
+            const accessCard = document.getElementById('accessCard');
+            const vaultContent = document.getElementById('vaultContent');
+            
+            // Get current time in HHMM format
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const correctPassword = hours + minutes;
+            
+            const enteredPassword = input.value;
+            
+            if (enteredPassword === correctPassword) {
+                // Correct password
+                accessCard.style.display = 'none';
+                vaultContent.classList.add('unlocked');
+                errorMsg.style.display = 'none';
+                loadCollaborationProjects();
+            } else {
+                // Wrong password
+                errorMsg.style.display = 'block';
+                input.value = '';
+                input.focus();
+                
+                // Hide error after 3 seconds
+                setTimeout(() => {
+                    errorMsg.style.display = 'none';
+                }, 3000);
+            }
+        }
+        
+        // Allow Enter key to submit
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
+        // Auto-focus on password input
+        window.addEventListener('load', function() {
+            document.getElementById('passwordInput').focus();
+        });
+        
+        // Section switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const sectionRadios = document.querySelectorAll('input[name="vault-section"]');
+            
+            sectionRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Hide all sections
+                    document.querySelectorAll('.vault-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Show selected section
+                    if (this.id === 'section-collab') {
+                        document.getElementById('collaboration-section').style.display = 'block';
+                    } else if (this.id === 'section-tools') {
+                        document.getElementById('tools-section').style.display = 'block';
+                        loadForensicTools();
+                    } else if (this.id === 'section-blogs') {
+                        document.getElementById('blogs-section').style.display = 'block';
+                    }
+                });
+            });
+        });
+        
+        // Go back to main portfolio
+        function goBackToMain() {
+            window.location.href = 'index.html#projects';
+        }
+    </script>
+</body>
+</html>

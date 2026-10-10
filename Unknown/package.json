@@ -1,0 +1,26 @@
+{
+  "name": "gooichand-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "@dietrichgebert/ponytail": "^4.10.0",
+    "@google/generative-ai": "^0.21.0",
+    "@vercel/kv": "^3.0.0",
+    "resend": "^6.25.0"
+  },
+  "description": "",
+  "main": "3d-experience-cards.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gooichand/Gooichand.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Gooichand/Gooichand.github.io/issues"
+  },
+  "homepage": "https://github.com/Gooichand/Gooichand.github.io#readme"
+}

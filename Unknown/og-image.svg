@@ -1,0 +1,31 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050a05"/>
+      <stop offset="50%" style="stop-color:#0a1a0a"/>
+      <stop offset="100%" style="stop-color:#050a05"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ff41"/>
+      <stop offset="100%" style="stop-color:#00c8ff"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" style="stop-color:rgba(0,255,65,0.15)"/>
+      <stop offset="100%" style="stop-color:transparent"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="200" y="430" fill="url(#glow)"/>
+  <line x1="80" y1="260" x2="1120" y2="260" stroke="url(#accent)" stroke-width="2" opacity="0.3"/>
+  <line x1="80" y1="370" x2="1120" y2="370" stroke="url(#accent)" stroke-width="2" opacity="0.3"/>
+  <text x="600" y="210" text-anchor="middle" font-family="'Segoe UI', 'AkayaKanadaka', serif" font-size="52" font-weight="bold" fill="#00ff41" letter-spacing="3">GOPICHAND DANDIMENI</text>
+  <text x="600" y="310" text-anchor="middle" font-family="monospace" font-size="26" fill="#00c8ff" letter-spacing="2" opacity="0.9">CYBERSECURITY &amp; DIGITAL FORENSICS</text>
+  <rect x="520" y="340" width="160" height="2" fill="url(#accent)" rx="1"/>
+  <text x="600" y="420" text-anchor="middle" font-family="monospace" font-size="16" fill="rgba(255,255,255,0.2)" letter-spacing="4">PORTFOLIO</text>
+  <rect x="80" y="480" width="1040" height="1" fill="rgba(0,255,65,0.08)"/>
+  <text x="600" y="530" text-anchor="middle" font-family="monospace" font-size="12" fill="rgba(255,255,255,0.15)" letter-spacing="1">gooichand.github.io</text>
+  <circle cx="160" cy="530" r="4" fill="#00ff41" opacity="0.3"/>
+  <circle cx="1040" cy="530" r="4" fill="#00c8ff" opacity="0.3"/>
+  <circle cx="600" cy="560" r="2" fill="rgba(0,255,65,0.2)"/>
+  <circle cx="600" cy="560" r="6" fill="rgba(0,255,65,0.05)"/>
+</svg>

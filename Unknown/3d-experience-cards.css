@@ -1,0 +1,176 @@
+/* 3D Experience Cards Styling */
+.experience-3d-container {
+    perspective: 1000px;
+    padding: 2rem 0;
+}
+
+.experience-3d-card {
+    position: relative;
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-linear;
+}
+
+.experience-3d-body {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    height: auto;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-3d-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 255, 65, 0.05), rgba(0, 255, 255, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.experience-3d-card:hover .experience-3d-body::before {
+    opacity: 1;
+}
+
+.experience-3d-card:hover .experience-3d-body {
+    box-shadow: 0 0 40px rgba(0, 255, 65, 0.3);
+    border-color: var(--forensic-green);
+}
+
+.experience-3d-item {
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease-linear;
+}
+
+.exp-3d-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--forensic-green);
+    font-family: 'Orbitron', monospace;
+    margin-bottom: 0.5rem;
+}
+
+.exp-3d-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(135deg, var(--forensic-green), var(--forensic-cyan));
+    color: black;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+.exp-3d-content {
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.exp-3d-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.exp-3d-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.exp-3d-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.exp-3d-btn-primary {
+    background: linear-gradient(135deg, var(--forensic-green), var(--forensic-cyan));
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.exp-3d-btn-primary:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+    transform: translateY(-2px);
+}
+
+.exp-3d-btn-secondary {
+    background: transparent;
+    color: var(--forensic-cyan);
+    border: 1px solid var(--forensic-cyan);
+}
+
+.exp-3d-btn-secondary:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.exp-3d-icon {
+    font-size: 3rem;
+    color: var(--forensic-green);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+}
+
+/* Grid Layout */
+.experiences-3d-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .experiences-3d-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-3d-card {
+        max-width: 100%;
+    }
+    
+    .exp-3d-actions {
+        flex-direction: column;
+    }
+    
+    .exp-3d-btn {
+        width: 100%;
+    }
+}
+
+/* Badge 3D lift transition */
+.experience-notification .exp-badge {
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 0.35s ease,
+              background 0.25s ease,
+              color 0.25s ease;
+  will-change: transform;
+}
+

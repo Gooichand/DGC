@@ -1,0 +1,99 @@
+/* Portfolio-wide typography system */
+:root {
+  --portfolio-font: 'Cormorant Garamond', Georgia, serif;
+}
+
+html,
+body,
+body * {
+  font-family: var(--portfolio-font) !important;
+}
+
+body {
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+/* Keep icon glyphs mapped to their icon font instead of replacing them with text glyphs. */
+:is(.fa, .fas, .far, .fal, .fad, [class^='fa-'], [class*=' fa-']) {
+  font-family: 'Font Awesome 6 Free' !important;
+  font-style: normal;
+}
+
+:is(.fab, .fa-brands, [class^='fab '], [class*=' fab ']) {
+  font-family: 'Font Awesome 6 Brands' !important;
+}
+
+/* Improve the editorial serif’s hierarchy across the forensic interface. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select,
+textarea,
+a,
+label,
+li,
+p,
+span,
+div {
+  font-synthesis: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: 0.025em;
+}
+
+button,
+input,
+select,
+textarea {
+  font-weight: 600;
+}
+
+/* Small uppercase forensic labels remain compact and legible in the new serif. */
+[class*='kicker'],
+[class*='label'],
+[class*='badge'],
+[class*='status'],
+[class*='meta'],
+[class*='eyebrow'],
+[class*='signal-title'],
+[class*='case-id'],
+[class*='date'],
+[class*='tag'] {
+  letter-spacing: 0.08em;
+}
+
+code,
+pre,
+kbd,
+.font-mono,
+[class*='mono'] {
+  font-family: var(--portfolio-font) !important;
+}
+
+@media (max-width: 720px) {
+  body {
+    letter-spacing: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: 0.015em;
+  }
+}

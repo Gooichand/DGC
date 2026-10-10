@@ -1,0 +1,18 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build:all",
+  "installCommand": "npm install && npm --prefix Creative install",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/chat.js": {
+      "includeFiles": "Unknown/src/components/PortfolioAssistant/base-resume.txt"
+    }
+  },
+  "rewrites": [
+    { "source": "/Creative/start", "destination": "/Creative/start/index.html" },
+    { "source": "/Creative/start/", "destination": "/Creative/start/index.html" },
+    { "source": "/Creative/:path*", "destination": "/Creative/index.html" },
+    { "source": "/sanity-cdn/:path*", "destination": "https://cdn.sanity.io/:path*" }
+  ]
+}

@@ -1,0 +1,2081 @@
+﻿/* Neural Path / Skill Evolution Map for the EDUCATION section */
+.education-neural-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 4rem 2rem 4rem;
+  background: transparent !important;
+  scroll-margin-top: 1.5rem;
+}
+
+.education-neural-section::before,
+.education-neural-section::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.education-neural-section::before {
+  inset: 9rem 0 2rem;
+  opacity: 0.7;
+  background:
+    radial-gradient(circle at 14% 39%, rgba(0, 255, 65, 0.11), transparent 20%),
+    radial-gradient(circle at 50% 41%, rgba(0, 255, 255, 0.09), transparent 23%),
+    radial-gradient(circle at 78% 42%, rgba(255, 170, 0, 0.11), transparent 20%),
+    linear-gradient(90deg, transparent 0 9%, rgba(0, 255, 65, 0.04) 9.1%, transparent 9.2% 100%);
+}
+
+.education-neural-section::after {
+  top: 20%;
+  left: 4%;
+  right: 4%;
+  height: 1px;
+  opacity: 0.28;
+  background: linear-gradient(90deg, transparent, var(--forensic-green), var(--forensic-cyan), var(--forensic-amber), transparent);
+  box-shadow: 0 19rem 0 rgba(0, 255, 65, 0.12), 0 33rem 0 rgba(0, 255, 255, 0.08);
+}
+
+.education-neural-shell {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+}
+
+.education-neural-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 2.4rem;
+}
+
+.education-neural-eyebrow,
+.education-neural-kicker,
+.education-neural-meta-label,
+.education-neural-status-label,
+.education-neural-signal-title,
+.education-neural-evidence-kicker {
+  color: var(--forensic-green);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.education-neural-eyebrow {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.education-neural-title {
+  margin: 0;
+  color: #f4f8f4;
+  font-family: 'Orbitron', 'JetBrains Mono', sans-serif;
+  font-size: clamp(2.35rem, 5vw, 4.7rem);
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  line-height: 0.96;
+  text-shadow: 0 0 22px rgba(0, 255, 65, 0.18);
+}
+
+.education-neural-subtitle {
+  max-width: 45rem;
+  margin: 1rem 0 0;
+  color: var(--text-secondary);
+  font-family: 'Caveat', cursive;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.45;
+}
+
+.education-neural-kicker {
+  justify-self: end;
+  padding: 0.65rem 1.15rem;
+  border: 1px solid rgba(0, 255, 65, 0.5);
+  border-radius: 999px;
+  background: rgba(0, 18, 16, 0.24);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.08);
+  white-space: nowrap;
+}
+
+.education-neural-case-meta {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.42rem 1.35rem;
+  justify-self: end;
+  min-width: 16rem;
+  padding: 0.95rem 1.1rem;
+  border: 1px solid rgba(0, 255, 65, 0.25);
+  background: rgba(3, 13, 18, 0.2);
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.06em;
+}
+
+.education-neural-case-meta strong {
+  color: var(--forensic-green);
+  font-weight: 500;
+}
+
+.education-neural-case-meta span:last-child {
+  color: var(--forensic-green);
+}
+
+.education-neural-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(15rem, 0.82fr);
+  gap: 1.25rem;
+  align-items: start;
+  min-height: 36rem;
+  padding: 1.2rem 0 0;
+}
+
+.education-neural-stage::before {
+  content: "";
+  position: absolute;
+  top: 10.7rem;
+  left: 2.5%;
+  right: 27%;
+  height: 2px;
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(0, 255, 65, 0.05), var(--forensic-green) 28%, var(--forensic-cyan) 62%, var(--forensic-amber));
+  box-shadow: 0 0 9px rgba(0, 255, 255, 0.5), 0 0 24px rgba(0, 255, 65, 0.12);
+}
+
+.education-neural-stage::after {
+  content: "";
+  position: absolute;
+  top: 10.2rem;
+  left: 2.5%;
+  right: 27%;
+  height: 1.1rem;
+  z-index: 0;
+  opacity: 0.38;
+  background: repeating-linear-gradient(90deg, transparent 0 2.8rem, rgba(0, 255, 255, 0.7) 2.85rem 2.95rem, transparent 3rem 5rem);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.education-neural-node {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  background: transparent;
+
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.education-neural-node:nth-child(2) {
+  transform: translateY(0.85rem);
+}
+
+.education-neural-node.is-active {
+  transform: translateY(-0.8rem);
+}
+
+.education-neural-node:focus-visible {
+  outline: none;
+}
+
+.education-neural-node:focus-visible .education-neural-orb {
+  outline: 3px solid rgba(255, 255, 255, 0.92);
+  outline-offset: 7px;
+}
+
+.education-neural-orb {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(7.5rem, 10vw, 9.5rem);
+  height: clamp(7.5rem, 10vw, 9.5rem);
+  margin-bottom: 1.05rem;
+  border: 2px solid var(--node-color, var(--forensic-green));
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4, 30, 29, 0.88), rgba(3, 12, 17, 0.56) 62%, transparent 63%);
+  color: var(--node-color, var(--forensic-green));
+  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.12), 0 0 18px color-mix(in srgb, var(--node-color, var(--forensic-green)) 72%, transparent), inset 0 0 24px color-mix(in srgb, var(--node-color, var(--forensic-green)) 20%, transparent);
+  cursor: pointer;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 220ms ease, background 220ms ease;
+}
+
+.education-neural-orb::before,
+.education-neural-orb::after {
+  content: "";
+  position: absolute;
+  border: 1px solid color-mix(in srgb, var(--node-color, var(--forensic-green)) 65%, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.education-neural-orb::before {
+  inset: -0.7rem;
+  opacity: 0.55;
+}
+
+.education-neural-orb::after {
+  inset: -1.35rem;
+  opacity: 0.2;
+  border-style: dashed;
+  transform: rotate(24deg);
+}
+
+.education-neural-node:hover .education-neural-orb,
+.education-neural-node.is-active .education-neural-orb {
+  transform: scale(1.06);
+  background: radial-gradient(circle, color-mix(in srgb, var(--node-color, var(--forensic-green)) 15%, rgba(4, 30, 29, 0.9)), rgba(3, 12, 17, 0.52) 62%, transparent 63%);
+  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.12), 0 0 28px color-mix(in srgb, var(--node-color, var(--forensic-green)) 86%, transparent), 0 0 70px color-mix(in srgb, var(--node-color, var(--forensic-green)) 23%, transparent), inset 0 0 30px color-mix(in srgb, var(--node-color, var(--forensic-green)) 26%, transparent);
+}
+
+.education-neural-orb i {
+  position: relative;
+  z-index: 1;
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+.education-neural-index {
+  position: absolute;
+  top: -2.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--node-color, var(--forensic-green));
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.education-neural-node-card {
+  width: 100%;
+  max-width: 15.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 12.3rem;
+  padding: 0.9rem 0.8rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--node-color, var(--forensic-green)) 48%, var(--glass-border));
+  border-radius: 0.65rem;
+  background: rgba(3, 13, 18, 0.24);
+  box-shadow: inset 0 0 28px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(8px);
+}
+
+.education-neural-node.is-active .education-neural-node-card {
+  border-color: color-mix(in srgb, var(--node-color, var(--forensic-green)) 88%, white);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--node-color, var(--forensic-green)) 16%, transparent), inset 0 0 28px color-mix(in srgb, var(--node-color, var(--forensic-green)) 8%, transparent);
+}
+
+.education-neural-node-title {
+  display: block;
+  margin: 0 0 0.28rem;
+  color: #f2f8f4;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.education-neural-node-degree,
+.education-neural-node-school,
+.education-neural-node-specialization {
+  display: block;
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.education-neural-node-degree {
+  color: var(--text-secondary);
+}
+
+.education-neural-node-school {
+  margin-top: 0.65rem;
+  color: var(--node-color, var(--forensic-green));
+  font-weight: 700;
+}
+
+.education-neural-node-specialization {
+  margin-top: 0.24rem;
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+}
+
+.education-neural-node-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.72rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--node-color, var(--forensic-green));
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+}
+
+.education-neural-node-status {
+  color: var(--text-secondary);
+  text-align: right;
+}
+
+.education-neural-active {
+  display: grid;
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  align-self: start;
+  gap: 0.8rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 170, 0, 0.5);
+  border-radius: 0.8rem;
+  background: rgba(3, 13, 18, 0.28);
+  box-shadow: 0 0 28px rgba(255, 170, 0, 0.08), inset 0 0 24px rgba(255, 170, 0, 0.04);
+  backdrop-filter: blur(9px);
+}
+
+.education-neural-active-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.education-neural-active-label {
+  color: var(--forensic-amber);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.69rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.education-neural-active-signal {
+  color: var(--forensic-amber);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+/* ---------- 3D Preview Stage ---------- */
+
+.education-neural-active-image-button {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid rgba(255, 170, 0, 0.58);
+  border-radius: 0.7rem;
+  background:
+    linear-gradient(160deg, rgba(255, 170, 0, 0.09), rgba(0, 0, 0, 0.55));
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 900px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.4s ease;
+  box-shadow:
+    0 18px 40px -18px rgba(0, 0, 0, 0.85),
+    0 0 22px rgba(255, 170, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.education-neural-active-image-button:hover {
+  transform: translateY(-5px) rotateX(4deg) rotateY(-3deg) scale(1.015);
+  border-color: rgba(255, 170, 0, 0.95);
+  box-shadow:
+    0 30px 60px -20px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(255, 170, 0, 0.28),
+    0 0 90px rgba(255, 170, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* HUD corner brackets */
+.education-neural-active-image-button::before {
+  content: "";
+  position: absolute;
+  inset: 0.35rem;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--forensic-amber), var(--forensic-amber)) left top / 14px 2px,
+    linear-gradient(var(--forensic-amber), var(--forensic-amber)) left top / 2px 14px,
+    linear-gradient(var(--forensic-amber), var(--forensic-amber)) right top / 14px 2px,
+    linear-gradient(var(--forensic-amber), var(--forensic-amber)) right top / 2px 14px,
+    linear-gradient(var(--forensic-amber), var(--forensic-amber)) left bottom / 14px 2px,
+    linear-gradient(var(--forensic-amber), var(--forensic-amber)) left bottom / 2px 14px,
+    linear-gradient(var(--forensic-amber), var(--forensic-amber)) right bottom / 14px 2px,
+    linear-gradient(var(--forensic-amber), var(--forensic-amber)) right bottom / 2px 14px;
+  background-repeat: no-repeat;
+  opacity: 0.85;
+  transition: opacity 0.4s ease, inset 0.4s ease;
+}
+
+.education-neural-active-image-button:hover::before {
+  opacity: 1;
+  inset: 0.2rem;
+}
+
+.education-neural-active-image-button::after {
+  content: "VIEW CAMPUS ASSET";
+  position: absolute;
+  right: 0.55rem;
+  bottom: 0.5rem;
+  z-index: 4;
+  padding: 0.24rem 0.4rem;
+  color: #050b0b;
+  background: var(--forensic-amber);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.54rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.education-neural-active-image-button:hover::after {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 18px rgba(255, 170, 0, 0.4);
+}
+
+.education-neural-active-image-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.education-neural-active-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  filter: saturate(0.9) contrast(1.1) brightness(0.94);
+  transform: translateZ(24px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.education-neural-active-image-button:hover .education-neural-active-image {
+  transform: translateZ(40px) scale(1.04);
+  filter: saturate(1.05) contrast(1.14) brightness(1.02);
+}
+
+/* scan-line sweep */
+.education-neural-active-image-scan {
+  position: absolute;
+  inset: 0.3rem;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  pointer-events: none;
+}
+
+.education-neural-active-image-scan::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40%;
+  height: 34%;
+  background: linear-gradient(180deg, transparent, rgba(255, 170, 0, 0.16), transparent);
+  animation: edu-scan 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes edu-scan {
+  0%   { top: -40%; }
+  55%  { top: 110%; }
+  100% { top: 110%; }
+}
+
+/* glass sheen on hover */
+.education-neural-active-image-sheen {
+  position: absolute;
+  inset: 0.3rem;
+  z-index: 2;
+  border-radius: 0.4rem;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.14) 48%, transparent 62%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.education-neural-active-image-button:hover .education-neural-active-image-sheen {
+  transform: translateX(120%);
+}
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.education-neural-active-title {
+  margin: 0;
+  color: #f6fbf7;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.18rem;
+  line-height: 1.18;
+}
+
+.education-neural-active-school,
+.education-neural-active-specialization,
+.education-neural-active-location {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.education-neural-active-school {
+  color: var(--forensic-amber);
+  font-weight: 700;
+}
+
+.education-neural-active-specialization,
+.education-neural-active-location {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.education-neural-active-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.1rem;
+}
+
+.education-neural-active-fact {
+  padding: 0.28rem 0.45rem;
+  border: 1px solid rgba(255, 170, 0, 0.38);
+  color: var(--forensic-amber);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+}
+
+.education-neural-active-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(255, 170, 0, 0.23);
+  color: var(--forensic-amber);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+}
+
+.education-neural-signal-rail {
+  grid-column: 1 / span 3;
+  align-self: end;
+  margin-top: 2.2rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(0, 255, 65, 0.28);
+  border-radius: 0.7rem;
+  background: rgba(3, 13, 18, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.education-neural-signal-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.education-neural-signal-heading i {
+  color: var(--forensic-green);
+}
+
+.education-neural-signals {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.education-neural-signal {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  padding: 0.78rem 0.65rem;
+  border: 1px solid rgba(0, 255, 65, 0.24);
+  border-radius: 0.45rem;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.education-neural-signal i {
+  flex: 0 0 auto;
+  color: var(--forensic-green);
+  font-size: 0.85rem;
+}
+
+.education-neural-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.1rem;
+  color: rgba(190, 214, 202, 0.54);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1050px) {
+  .education-neural-stage {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .education-neural-active {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: minmax(12rem, 0.85fr) minmax(0, 1.15fr);
+    align-items: center;
+    margin-top: 1.2rem;
+  }
+
+  .education-neural-signal-rail {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-top: 0;
+  }
+
+  .education-neural-stage::before,
+  .education-neural-stage::after {
+    right: 4%;
+  }
+}
+
+@media (max-width: 720px) {
+  .education-neural-section {
+    padding: 4.7rem 1rem 4rem;
+  }
+
+  .education-neural-header {
+    display: block;
+    margin-bottom: 1.6rem;
+  }
+
+  .education-neural-kicker,
+  .education-neural-case-meta {
+    display: none;
+  }
+
+  .education-neural-title {
+    font-size: clamp(2.2rem, 13vw, 3.6rem);
+  }
+
+  .education-neural-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .education-neural-stage {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    gap: 1.1rem;
+    padding-top: 0.5rem;
+  }
+
+  .education-neural-stage::before,
+  .education-neural-stage::after {
+    top: 5rem;
+    bottom: 31rem;
+    left: 2rem;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, var(--forensic-green), var(--forensic-cyan), var(--forensic-amber));
+  }
+
+  .education-neural-stage::after {
+    width: 1px;
+    opacity: 0.36;
+    background: repeating-linear-gradient(180deg, transparent 0 2.8rem, rgba(0, 255, 255, 0.7) 2.85rem 2.95rem, transparent 3rem 5rem);
+  }
+
+  .education-neural-node {
+    display: grid;
+    grid-template-columns: 6.2rem minmax(0, 1fr);
+    align-items: center;
+    width: 100%;
+    gap: 0.85rem;
+    text-align: left;
+    transform: none !important;
+  }
+
+  .education-neural-orb {
+    grid-row: 1;
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto;
+  }
+
+  .education-neural-orb i {
+    font-size: 1.35rem;
+  }
+
+  .education-neural-index {
+    top: -1.35rem;
+    font-size: 0.85rem;
+  }
+
+  .education-neural-orb::before {
+    inset: -0.4rem;
+  }
+
+  .education-neural-orb::after {
+    inset: -0.75rem;
+  }
+
+  .education-neural-node-card {
+    grid-column: 2;
+    max-width: none;
+    min-height: 0;
+    padding: 0.75rem;
+  }
+
+  .education-neural-node-title {
+    font-size: 0.9rem;
+  }
+
+  .education-neural-node-meta {
+    margin-top: 0.55rem;
+    padding-top: 0.45rem;
+    font-size: 0.58rem;
+  }
+
+  .education-neural-active {
+    display: block;
+    margin-top: 0.8rem;
+    padding: 0.85rem;
+  }
+
+  .education-neural-active-image-button {
+    margin-top: 0.7rem;
+  }
+
+  .education-neural-signal-rail {
+    margin-top: 0.25rem;
+    padding: 0.85rem;
+  }
+
+  .education-neural-signals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-neural-signal:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .education-neural-footer {
+    display: block;
+    line-height: 1.8;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Forensic evidence timeline: simplified production layout
+   ------------------------------------------------------------------------- */
+.education-neural-section {
+  padding: clamp(3rem, 6vw, 4.5rem) clamp(1rem, 3vw, 2rem) 4rem;
+  background: transparent !important;
+}
+.education-neural-section::before {
+  inset: 8rem 0 2rem;
+  opacity: .45;
+  background:
+    radial-gradient(circle at 16% 42%, rgba(0, 255, 65, .08), transparent 24%),
+    radial-gradient(circle at 82% 42%, rgba(0, 200, 255, .08), transparent 24%),
+    linear-gradient(90deg, transparent, rgba(0, 255, 65, .025), transparent);
+}
+.education-neural-section::after { display: none; }
+.education-neural-shell {
+  width: min(1180px, 100%);
+}
+.education-neural-header {
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2.5rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+.education-neural-eyebrow,
+.education-neural-kicker,
+.education-neural-meta-label,
+.education-neural-signal-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .66rem;
+  letter-spacing: .14em;
+}
+.education-neural-subtitle {
+  max-width: 38rem;
+  margin-top: .65rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  font-style: normal;
+  line-height: 1.45;
+}
+.education-neural-kicker {
+  display: none;
+}
+.education-neural-case-meta {
+  min-width: 15rem;
+  gap: .35rem 1rem;
+  padding: .75rem .9rem;
+  border-color: rgba(0, 255, 65, .22);
+  background: rgba(3, 13, 18, .25);
+  font-size: .58rem;
+}
+.education-neural-stage {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: 1.4rem;
+  min-height: 0;
+  padding: 2.1rem 0 0;
+  perspective: none;
+  transform-style: flat;
+}
+.education-neural-stage::before {
+  top: 5.35rem;
+  left: 7%;
+  right: 7%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--forensic-green), var(--forensic-cyan), var(--forensic-amber));
+  box-shadow: 0 0 12px rgba(0, 255, 200, .25);
+}
+.education-neural-stage::after,
+.education-neural-connection,
+.education-neural-particle-field,
+.education-neural-stage > .education-neural-node::before,
+.education-neural-stage > .education-neural-node::after {
+  display: none;
+}
+.education-neural-stage > .education-neural-node {
+  grid-row: 1;
+  min-height: 14rem;
+  padding: 1.1rem .8rem .9rem;
+  border: 1px solid rgba(0, 255, 160, .22);
+  background: rgba(3, 14, 18, .34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05), 0 14px 30px rgba(0, 0, 0, .22);
+  transform: none !important;
+}
+.education-neural-stage > .education-neural-node:nth-of-type(2) { grid-column: 1; }
+.education-neural-stage > .education-neural-node:nth-of-type(3) { grid-column: 2; }
+.education-neural-stage > .education-neural-node:nth-of-type(4) { grid-column: 3; }
+.education-neural-node:hover,
+.education-neural-node:focus-visible,
+.education-neural-node.is-active {
+  border-color: var(--node-color, var(--forensic-green));
+  background: rgba(3, 18, 20, .55);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--node-color, #00ff41) 18%, transparent), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+.education-neural-orb {
+  width: 4.4rem;
+  height: 4.4rem;
+  flex: 0 0 4.4rem;
+  border-radius: .45rem;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .08), 0 0 24px color-mix(in srgb, var(--node-color, #00ff41) 20%, transparent);
+  transform: none !important;
+}
+.education-neural-node-card {
+  display: grid;
+  gap: .28rem;
+  width: 100%;
+  margin-top: .9rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.education-neural-node-title { font-size: .78rem; letter-spacing: .14em; }
+.education-neural-node-degree { color: #f0f8f5; font-size: 1rem; }
+.education-neural-node-school { color: var(--text-secondary); font-size: .78rem; }
+.education-neural-node-specialization { color: var(--node-color, var(--forensic-green)); font-size: .7rem; }
+.education-neural-node-meta { margin-top: .45rem; font-size: .62rem; }
+.education-neural-active {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: minmax(220px, .75fr) minmax(0, 1.25fr);
+  gap: 1.5rem;
+  align-items: center;
+  min-height: 15rem;
+  padding: 1.2rem;
+  border: 1px solid rgba(0, 255, 160, .24);
+  border-radius: .25rem;
+  background: rgba(3, 13, 18, .42);
+  box-shadow: inset 0 0 28px rgba(0, 255, 145, .035), 0 18px 40px rgba(0, 0, 0, .25);
+}
+.education-neural-active-header,
+.education-neural-active-meta-label,
+.education-neural-active-status { grid-column: 2; }
+.education-neural-active-image-button { grid-column: 1; grid-row: 1 / span 5; transform: none; }
+.education-neural-active-image { max-height: 12rem; object-fit: cover; }
+.education-neural-active-header { grid-row: 1; }
+.education-neural-active-title { grid-row: 2; margin: 0; }
+.education-neural-active-school,
+.education-neural-active-specialization,
+.education-neural-active-location { grid-column: 2; margin: 0; }
+.education-neural-active-facts { grid-column: 2; }
+.education-neural-active-status { grid-row: 7; }
+.education-neural-signal-rail { display: none; }
+.education-neural-footer {
+  margin-top: 1rem;
+  padding-top: .8rem;
+  border-top-color: rgba(0, 255, 160, .15);
+  font-size: .58rem;
+}
+
+@media (max-width: 720px) {
+  .education-neural-header { grid-template-columns: 1fr; gap: 1rem; }
+  .education-neural-case-meta { justify-self: start; }
+  .education-neural-stage { grid-template-columns: 1fr; gap: .8rem; padding-top: 1rem; }
+  .education-neural-stage::before { top: 0; bottom: 0; left: 1rem; right: auto; width: 1px; height: auto; background: linear-gradient(var(--forensic-green), var(--forensic-cyan), var(--forensic-amber)); }
+  .education-neural-stage > .education-neural-node,
+  .education-neural-stage > .education-neural-node:nth-of-type(2),
+  .education-neural-stage > .education-neural-node:nth-of-type(3),
+  .education-neural-stage > .education-neural-node:nth-of-type(4) { grid-column: 1; grid-row: auto; min-height: 0; padding: .8rem .8rem .8rem 2.7rem; align-items: flex-start; text-align: left; }
+  .education-neural-orb { position: absolute; left: -.05rem; top: 1rem; width: 2rem; height: 2rem; flex-basis: 2rem; }
+  .education-neural-node-card { margin-top: 0; }
+  .education-neural-active { grid-column: 1; grid-row: auto; grid-template-columns: 1fr; gap: .8rem; }
+  .education-neural-active-image-button,
+  .education-neural-active-header,
+  .education-neural-active-title,
+  .education-neural-active-school,
+  .education-neural-active-specialization,
+  .education-neural-active-location,
+  .education-neural-active-facts,
+  .education-neural-active-status { grid-column: 1; grid-row: auto; }
+  .education-neural-active-image-button { order: -1; }
+  .education-neural-active-image { max-height: 11rem; }
+  .education-neural-footer { flex-wrap: wrap; gap: .55rem 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-neural-node,
+  .education-neural-orb {
+    transition: none;
+  }
+  .education-neural-active-image-button,
+  .education-neural-active-image,
+  .education-neural-active-image-button::after,
+  .education-neural-active-image-sheen {
+    transition: none;
+  }
+  .education-neural-active-image-scan::before {
+    animation: none;
+  }
+}
+
+/* Reference-matching refinement: shared heading language, octagonal nodes, and explicit neural wiring. */
+.education-neural-title {
+  color: #f2f6ff;
+  font-family: 'AkayaKanadaka', serif;
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+  text-shadow: 0 0 24px rgba(0, 255, 65, 0.26);
+}
+
+.education-neural-title::after {
+  content: '';
+  display: block;
+  width: min(23rem, 75%);
+  height: 1px;
+  margin-top: 0.8rem;
+  background: linear-gradient(90deg, var(--forensic-green), var(--forensic-cyan), transparent);
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.42);
+}
+
+.education-neural-connection {
+  position: absolute;
+  top: 1.9rem;
+  left: 0;
+  right: 27%;
+  width: 73%;
+  height: 14rem;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.education-neural-connection-glow,
+.education-neural-connection-main,
+.education-neural-connection-branch {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.education-neural-connection-glow {
+  stroke: url(#educationNeuralGradient);
+  stroke-width: 10;
+  opacity: 0.22;
+  filter: url(#educationNeuralGlow);
+}
+
+.education-neural-connection-main {
+  stroke: url(#educationNeuralGradient);
+  stroke-width: 2.5;
+  opacity: 0.94;
+  filter: url(#educationNeuralGlow);
+}
+
+.education-neural-connection-branch {
+  stroke: url(#educationNeuralGradient);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 8;
+  opacity: 0.68;
+}
+
+.education-neural-signal-dot {
+  stroke: #07100d;
+  stroke-width: 3;
+  filter: url(#educationNeuralGlow);
+}
+
+.education-neural-signal-dot.green { fill: var(--forensic-green); }
+.education-neural-signal-dot.cyan { fill: var(--forensic-cyan); }
+.education-neural-signal-dot.amber { fill: var(--forensic-amber); }
+
+.education-neural-stage::before,
+.education-neural-stage::after {
+  display: none;
+}
+
+.education-neural-stage > .education-neural-node {
+  z-index: 2;
+}
+
+.education-neural-stage > .education-neural-node:nth-of-type(2) {
+  transform: translateY(0.85rem);
+}
+
+.education-neural-stage > .education-neural-node.is-active {
+  transform: translateY(-0.8rem);
+}
+
+.education-neural-orb {
+  border-radius: 0.7rem;
+  clip-path: polygon(50% 0%, 84% 14%, 100% 50%, 84% 86%, 50% 100%, 16% 86%, 0% 50%, 16% 14%);
+}
+
+.education-neural-orb::before,
+.education-neural-orb::after {
+  border-radius: 0.7rem;
+}
+
+.education-neural-node.is-active .education-neural-orb {
+  transform: scale(1.12);
+}
+
+.education-neural-active {
+  border-radius: 0.2rem;
+  background: rgba(3, 13, 18, 0.38);
+}
+
+.education-neural-active-image-button {
+  transform: rotate(2.5deg);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.education-neural-active-image-button:hover {
+  transform: rotate(0deg) translateY(-2px);
+  box-shadow: 0 0 22px rgba(255, 170, 0, 0.22);
+}
+
+@media (max-width: 1050px) {
+  .education-neural-connection {
+    right: 0;
+    width: 100%;
+    height: 12rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .education-neural-title {
+    font-size: clamp(2.4rem, 14vw, 3.8rem);
+  }
+
+  .education-neural-connection {
+    display: none;
+  }
+
+  .education-neural-stage::before,
+  .education-neural-stage::after {
+    display: block;
+  }
+
+  .education-neural-stage > .education-neural-node:nth-of-type(2),
+  .education-neural-stage > .education-neural-node.is-active {
+    transform: none;
+  }
+
+  .education-neural-node.is-active .education-neural-orb {
+    transform: scale(1.04);
+  }
+}
+
+/* Depth pass: layered 3D field and hover-inspection treatment. */
+.education-neural-stage {
+  perspective: 1450px;
+  transform-style: preserve-3d;
+}
+
+.education-neural-particle-field {
+  position: absolute;
+  inset: 1rem 27% 6rem 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.74;
+  transform: translateZ(-35px) rotateX(2deg);
+  background-image:
+    radial-gradient(circle at 4% 42%, rgba(0, 255, 65, 0.9) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 11% 27%, rgba(0, 255, 65, 0.65) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 18% 65%, rgba(0, 255, 65, 0.58) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 28% 32%, rgba(0, 255, 255, 0.84) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 36% 76%, rgba(0, 255, 255, 0.58) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 46% 24%, rgba(0, 255, 255, 0.62) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 57% 66%, rgba(0, 255, 255, 0.5) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 68% 27%, rgba(255, 170, 0, 0.72) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 78% 60%, rgba(255, 170, 0, 0.6) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 88% 31%, rgba(255, 170, 0, 0.82) 0 1px, transparent 1.9px),
+    radial-gradient(ellipse at 22% 50%, rgba(0, 255, 65, 0.16), transparent 26%),
+    radial-gradient(ellipse at 58% 50%, rgba(0, 255, 255, 0.13), transparent 28%),
+    radial-gradient(ellipse at 88% 50%, rgba(255, 170, 0, 0.16), transparent 24%);
+  background-size: 100% 100%;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 94%, transparent), linear-gradient(180deg, transparent, #000 14%, #000 86%, transparent);
+  mask-composite: intersect;
+  animation: educationParticleDrift 14s ease-in-out infinite alternate;
+}
+
+.education-neural-particle-field::before,
+.education-neural-particle-field::after {
+  content: '';
+  position: absolute;
+  inset: 17% 0 18%;
+  background-image: repeating-linear-gradient(12deg, transparent 0 2.7rem, rgba(0, 255, 255, 0.13) 2.75rem 2.78rem, transparent 2.82rem 5.2rem), repeating-linear-gradient(-16deg, transparent 0 3.3rem, rgba(0, 255, 65, 0.1) 3.34rem 3.37rem, transparent 3.41rem 6rem);
+  opacity: 0.5;
+}
+
+.education-neural-particle-field::after {
+  inset: 24% 0 23%;
+  background-image: radial-gradient(ellipse at center, transparent 0 48%, rgba(0, 255, 255, 0.12) 48.5% 49%, transparent 50% 100%);
+  background-size: 15rem 6rem;
+  opacity: 0.55;
+  transform: translateX(1.8rem);
+}
+
+@keyframes educationParticleDrift {
+  from { transform: translate3d(-0.6rem, 0.2rem, -35px) rotateX(2deg); }
+  to { transform: translate3d(0.8rem, -0.4rem, -35px) rotateX(2deg); }
+}
+
+.education-neural-node {
+  transform-style: preserve-3d;
+}
+
+.education-neural-node:nth-of-type(1) {
+  transform: translateY(0.15rem) translateZ(18px);
+}
+
+.education-neural-node:nth-of-type(2) {
+  transform: translateY(0.85rem) translateZ(42px);
+}
+
+.education-neural-node:nth-of-type(3) {
+  transform: translateY(-0.15rem) translateZ(70px);
+}
+
+.education-neural-stage > .education-neural-node.is-active {
+  transform: translateY(-0.8rem) translateZ(95px) scale(1.035);
+}
+
+.education-neural-orb {
+  transform-style: preserve-3d;
+  box-shadow:
+    0 1.4rem 2rem rgba(0, 0, 0, 0.38),
+    0 0 0 0.35rem rgba(0, 0, 0, 0.18),
+    0 0 1.2rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 75%, transparent),
+    inset 0 0 1.8rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 28%, transparent);
+}
+
+.education-neural-orb::before {
+  inset: -0.68rem;
+  border-width: 2px;
+  opacity: 0.72;
+  box-shadow: 0 0 1rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 60%, transparent);
+  transform: translateZ(-8px) rotate(9deg);
+  animation: educationRingSpin 12s linear infinite;
+}
+
+.education-neural-orb::after {
+  inset: -1.25rem;
+  border-width: 1px;
+  opacity: 0.3;
+  border-style: dashed;
+  transform: translateZ(-18px) rotate(-16deg);
+  animation: educationRingSpinReverse 18s linear infinite;
+}
+
+.education-neural-node.is-active .education-neural-orb {
+  transform: scale(1.12) translateZ(18px);
+  box-shadow:
+    0 1.8rem 2.4rem rgba(0, 0, 0, 0.45),
+    0 0 0 0.42rem rgba(255, 170, 0, 0.08),
+    0 0 2.5rem color-mix(in srgb, var(--node-color, var(--forensic-amber)) 90%, transparent),
+    0 0 6rem color-mix(in srgb, var(--node-color, var(--forensic-amber)) 26%, transparent),
+    inset 0 0 2.6rem color-mix(in srgb, var(--node-color, var(--forensic-amber)) 38%, transparent);
+}
+
+@keyframes educationRingSpin {
+  to { transform: translateZ(-8px) rotate(369deg); }
+}
+
+@keyframes educationRingSpinReverse {
+  to { transform: translateZ(-18px) rotate(-376deg); }
+}
+
+.education-neural-connection {
+  transform: translateZ(12px);
+}
+
+.education-neural-connection-main {
+  stroke-dasharray: 1 9;
+  animation: educationSignalFlow 5s linear infinite;
+}
+
+.education-neural-connection-branch {
+  animation: educationBranchPulse 3.4s ease-in-out infinite alternate;
+}
+
+@keyframes educationSignalFlow {
+  to { stroke-dashoffset: -100; }
+}
+
+@keyframes educationBranchPulse {
+  from { opacity: 0.3; }
+  to { opacity: 0.9; }
+}
+
+.education-neural-hover-hint {
+  color: rgba(255, 170, 0, 0.78);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: translateX(0.4rem);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.education-neural-active:hover .education-neural-hover-hint,
+.education-neural-node:hover ~ .education-neural-active .education-neural-hover-hint,
+.education-neural-node:focus-visible ~ .education-neural-active .education-neural-hover-hint {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.education-neural-active {
+  transform: translateZ(55px);
+  box-shadow:
+    0 1.5rem 2.4rem rgba(0, 0, 0, 0.35),
+    0 0 2rem rgba(255, 170, 0, 0.1),
+    inset 0 0 2.4rem rgba(255, 170, 0, 0.06);
+}
+
+.education-neural-node:hover .education-neural-node-card,
+.education-neural-node:focus-visible .education-neural-node-card {
+  transform: translateZ(14px);
+  box-shadow: 0 0 1.7rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 22%, transparent), inset 0 0 1.8rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 11%, transparent);
+}
+
+.education-neural-node-card {
+  transform-style: preserve-3d;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 220ms ease, border-color 220ms ease;
+}
+
+@media (max-width: 720px) {
+  .education-neural-particle-field {
+    inset: 0 0 25rem 0;
+    opacity: 0.42;
+    transform: none;
+  }
+
+  .education-neural-node:nth-of-type(1),
+  .education-neural-node:nth-of-type(2),
+  .education-neural-node:nth-of-type(3),
+  .education-neural-stage > .education-neural-node.is-active {
+    transform: none;
+  }
+
+  .education-neural-active {
+    transform: none;
+  }
+
+  .education-neural-hover-hint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-neural-particle-field,
+  .education-neural-orb::before,
+  .education-neural-orb::after,
+  .education-neural-connection-main,
+  .education-neural-connection-branch {
+    animation: none;
+  }
+}
+
+/* Multi-ring node correction: outer shell stays visible; inner core carries the octagonal face. */
+.education-neural-orb,
+.education-neural-node:hover .education-neural-orb,
+.education-neural-node.is-active .education-neural-orb {
+  border: 0;
+  clip-path: none;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.education-neural-orb-core {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--node-color, var(--forensic-green));
+  border-radius: 0.7rem;
+  background: radial-gradient(circle, color-mix(in srgb, var(--node-color, var(--forensic-green)) 16%, rgba(4, 30, 29, 0.94)), rgba(3, 12, 17, 0.76) 62%, rgba(3, 12, 17, 0.25) 63%);
+  clip-path: polygon(50% 0%, 84% 14%, 100% 50%, 84% 86%, 50% 100%, 16% 86%, 0% 50%, 16% 14%);
+  box-shadow:
+    0 1.4rem 2rem rgba(0, 0, 0, 0.38),
+    0 0 1.2rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 75%, transparent),
+    inset 0 0 1.8rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 28%, transparent);
+  transform-style: preserve-3d;
+}
+
+.education-neural-orb-core::before,
+.education-neural-orb-core::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--node-color, var(--forensic-green)) 70%, transparent);
+  border-radius: 0.65rem;
+  clip-path: polygon(50% 0%, 84% 14%, 100% 50%, 84% 86%, 50% 100%, 16% 86%, 0% 50%, 16% 14%);
+}
+
+.education-neural-orb-core::before {
+  inset: 0.55rem;
+  opacity: 0.62;
+}
+
+.education-neural-orb-core::after {
+  inset: 1.05rem;
+  opacity: 0.32;
+  border-style: dashed;
+}
+
+.education-neural-orb-core i,
+.education-neural-orb-core .education-neural-index {
+  position: relative;
+  z-index: 2;
+}
+
+.education-neural-node.is-active .education-neural-orb-core {
+  transform: translateZ(18px) scale(1.04);
+  box-shadow:
+    0 1.8rem 2.4rem rgba(0, 0, 0, 0.45),
+    0 0 2.5rem color-mix(in srgb, var(--node-color, var(--forensic-amber)) 90%, transparent),
+    0 0 6rem color-mix(in srgb, var(--node-color, var(--forensic-amber)) 26%, transparent),
+    inset 0 0 2.6rem color-mix(in srgb, var(--node-color, var(--forensic-amber)) 38%, transparent);
+}
+
+@media (max-width: 720px) {
+  .education-neural-orb-core {
+    transform: none;
+  }
+
+  .education-neural-node.is-active .education-neural-orb-core {
+    transform: scale(1.02);
+  }
+}
+
+/* Keep reference halos aligned as concentric octagons rather than rotated squares. */
+.education-neural-orb::before,
+.education-neural-orb::after {
+  clip-path: polygon(50% 0%, 84% 14%, 100% 50%, 84% 86%, 50% 100%, 16% 86%, 0% 50%, 16% 14%);
+  transform: translateZ(-8px) rotate(0deg);
+}
+
+.education-neural-orb::before {
+  border-width: 2px;
+  opacity: 0.54;
+}
+
+.education-neural-orb::after {
+  transform: translateZ(-18px) rotate(0deg);
+  opacity: 0.24;
+}
+
+.education-neural-node.is-active .education-neural-orb::before {
+  box-shadow: 0 0 1.5rem color-mix(in srgb, var(--node-color, var(--forensic-amber)) 80%, transparent);
+}
+
+.education-neural-orb-ring {
+  position: absolute;
+  inset: 50%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid color-mix(in srgb, var(--node-color, var(--forensic-green)) 66%, transparent);
+  clip-path: polygon(50% 0%, 84% 14%, 100% 50%, 84% 86%, 50% 100%, 16% 86%, 0% 50%, 16% 14%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.education-neural-orb-ring.ring-a {
+  width: 118%;
+  height: 118%;
+  opacity: 0.72;
+  border-width: 2px;
+  box-shadow: 0 0 1.2rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 44%, transparent);
+}
+
+.education-neural-orb-ring.ring-b {
+  width: 140%;
+  height: 140%;
+  opacity: 0.38;
+  border-style: dashed;
+  transform: translate(-50%, -50%) rotate(8deg);
+  animation: educationExplicitRingSpin 16s linear infinite;
+}
+
+.education-neural-orb-ring.ring-c {
+  width: 166%;
+  height: 166%;
+  opacity: 0.18;
+  border-style: dotted;
+  transform: translate(-50%, -50%) rotate(-11deg);
+  animation: educationExplicitRingSpinReverse 22s linear infinite;
+}
+
+.education-neural-node.is-active .education-neural-orb-ring.ring-a {
+  opacity: 0.95;
+  box-shadow: 0 0 2rem color-mix(in srgb, var(--node-color, var(--forensic-amber)) 72%, transparent);
+}
+
+.education-neural-node.is-active .education-neural-orb-ring.ring-b,
+.education-neural-node.is-active .education-neural-orb-ring.ring-c {
+  opacity: 0.48;
+}
+
+@keyframes educationExplicitRingSpin {
+  to { transform: translate(-50%, -50%) rotate(368deg); }
+}
+
+@keyframes educationExplicitRingSpinReverse {
+  to { transform: translate(-50%, -50%) rotate(-371deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-neural-orb-ring.ring-b,
+  .education-neural-orb-ring.ring-c {
+    animation: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .education-neural-section,
+  .education-neural-stage {
+    overflow-x: clip;
+  }
+
+  .education-neural-orb-ring.ring-a {
+    width: 112%;
+    height: 112%;
+  }
+
+  .education-neural-orb-ring.ring-b {
+    width: 126%;
+    height: 126%;
+  }
+
+  .education-neural-orb-ring.ring-c {
+    width: 146%;
+    height: 146%;
+  }
+}
+
+
+/* Compact modern education layout — keeps the existing interactive data contract while removing dead space. */
+.education-neural-section {
+  padding: clamp(3rem, 6vw, 4rem) 2rem clamp(2.75rem, 5vw, 3.5rem);
+}
+
+.education-neural-header {
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.education-neural-stage {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.85rem, 1.7vw, 1.35rem);
+  min-height: 0;
+  padding: 0.85rem 0 0;
+  align-items: stretch;
+}
+
+.education-neural-connection {
+  top: 1rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 9rem;
+}
+
+.education-neural-particle-field {
+  inset: 0 0 12rem;
+  opacity: 0.5;
+}
+
+.education-neural-stage > .education-neural-node,
+.education-neural-stage > .education-neural-node:nth-of-type(1),
+.education-neural-stage > .education-neural-node:nth-of-type(2),
+.education-neural-stage > .education-neural-node:nth-of-type(3),
+.education-neural-stage > .education-neural-node.is-active {
+  transform: none;
+}
+
+.education-neural-node {
+  align-items: stretch;
+  gap: 0.85rem;
+  min-width: 0;
+  z-index: 2;
+}
+
+.education-neural-orb {
+  width: clamp(6rem, 8vw, 7.6rem);
+  height: clamp(6rem, 8vw, 7.6rem);
+  margin: 0 auto 0.85rem;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), filter 180ms ease;
+}
+
+.education-neural-orb-core {
+  background: linear-gradient(145deg, rgba(6, 30, 29, 0.96), rgba(2, 13, 19, 0.88));
+}
+
+.education-neural-orb-core::before {
+  inset: 0.48rem;
+}
+
+.education-neural-orb-core::after {
+  inset: 0.95rem;
+}
+
+.education-neural-node:hover .education-neural-orb,
+.education-neural-node:focus-visible .education-neural-orb {
+  filter: brightness(1.16);
+  transform: translateY(-0.25rem);
+}
+
+.education-neural-node.is-active .education-neural-orb {
+  transform: translateY(-0.3rem);
+}
+
+.education-neural-node-card {
+  display: flex;
+  min-height: 0;
+  max-width: none;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.9rem 0.95rem 0.85rem;
+  border-radius: 0.8rem;
+  background: linear-gradient(155deg, rgba(10, 28, 31, 0.72), rgba(2, 12, 18, 0.5));
+  box-shadow: 0 0.7rem 1.8rem rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.education-neural-node-title {
+  font-size: clamp(0.88rem, 1.15vw, 1.02rem);
+  letter-spacing: 0.07em;
+}
+
+.education-neural-node-degree,
+.education-neural-node-school,
+.education-neural-node-specialization {
+  overflow-wrap: anywhere;
+}
+
+.education-neural-node-degree {
+  min-height: 2.35em;
+}
+
+.education-neural-node-school {
+  margin-top: 0.45rem;
+}
+
+.education-neural-node-meta {
+  margin-top: auto;
+  padding-top: 0.58rem;
+}
+
+.education-neural-active {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.72fr) minmax(0, 1.28fr);
+  grid-template-areas:
+    "header header"
+    "image details"
+    "image facts"
+    "image status";
+  align-items: center;
+  column-gap: clamp(1rem, 2vw, 1.6rem);
+  row-gap: 0.6rem;
+  margin-top: 0.4rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(255, 170, 0, 0.42);
+  border-radius: 0.9rem;
+  background: linear-gradient(120deg, rgba(19, 24, 19, 0.56), rgba(3, 15, 20, 0.68));
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transform: none;
+}
+
+.education-neural-active-header {
+  grid-area: header;
+  padding-bottom: 0.15rem;
+}
+
+.education-neural-active-image-button {
+  grid-area: image;
+  align-self: stretch;
+  min-height: 10rem;
+  transform: none;
+}
+
+.education-neural-active-image {
+  height: 100%;
+  min-height: 10rem;
+  object-fit: cover;
+}
+
+.education-neural-meta-label,
+.education-neural-active-title,
+.education-neural-active-school,
+.education-neural-active-specialization,
+.education-neural-active-location {
+  grid-column: 2;
+}
+
+.education-neural-meta-label {
+  align-self: end;
+  grid-area: details;
+}
+
+.education-neural-active-title {
+  align-self: start;
+  margin-top: -0.25rem;
+}
+
+.education-neural-active-school,
+.education-neural-active-specialization,
+.education-neural-active-location {
+  display: none;
+}
+
+.education-neural-active-facts {
+  grid-area: facts;
+  margin-top: 0;
+}
+
+.education-neural-active-status {
+  grid-area: status;
+  align-self: start;
+  margin-top: 0;
+  padding-top: 0.55rem;
+}
+
+.education-neural-signal-rail {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  align-self: stretch;
+  margin-top: 0.15rem;
+  padding: 0.8rem 0.95rem;
+  border-radius: 0.8rem;
+  background: rgba(3, 13, 18, 0.32);
+}
+
+.education-neural-signal-heading {
+  margin-bottom: 0.65rem;
+}
+
+.education-neural-signals {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.education-neural-signal {
+  justify-content: center;
+  min-height: 2.65rem;
+  padding: 0.55rem 0.5rem;
+  font-size: 0.61rem;
+}
+
+.education-neural-footer {
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .education-neural-stage {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .education-neural-active {
+    grid-template-columns: minmax(11rem, 0.78fr) minmax(0, 1.22fr);
+  }
+
+  .education-neural-signals {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .education-neural-section {
+    padding: 4.25rem 1rem 3.5rem;
+  }
+
+  .education-neural-stage {
+    display: flex;
+    gap: 0.85rem;
+    padding-top: 0.35rem;
+  }
+
+  .education-neural-connection {
+    display: none;
+  }
+
+  .education-neural-particle-field {
+    inset: 0 0 22rem;
+    opacity: 0.32;
+  }
+
+  .education-neural-node,
+  .education-neural-stage > .education-neural-node:nth-of-type(1),
+  .education-neural-stage > .education-neural-node:nth-of-type(2),
+  .education-neural-stage > .education-neural-node:nth-of-type(3),
+  .education-neural-stage > .education-neural-node.is-active {
+    display: grid;
+    grid-template-columns: 4.8rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+    transform: none;
+  }
+
+  .education-neural-orb {
+    width: 4.25rem;
+    height: 4.25rem;
+    margin: 0 auto;
+  }
+
+  .education-neural-orb i {
+    font-size: 1.15rem;
+  }
+
+  .education-neural-index {
+    top: -1.1rem;
+    font-size: 0.72rem;
+  }
+
+  .education-neural-node-card {
+    grid-column: 2;
+    padding: 0.72rem 0.78rem;
+  }
+
+  .education-neural-node-degree {
+    min-height: 0;
+  }
+
+  .education-neural-node-meta {
+    margin-top: 0.5rem;
+  }
+
+  .education-neural-active {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "image"
+      "details"
+      "facts"
+      "status";
+    gap: 0.65rem;
+    margin-top: 0.25rem;
+    padding: 0.8rem;
+  }
+
+  .education-neural-active-image-button {
+    min-height: 0;
+  }
+
+  .education-neural-active-image {
+    min-height: 0;
+    aspect-ratio: 16 / 7;
+  }
+
+  .education-neural-meta-label,
+  .education-neural-active-title,
+  .education-neural-active-school,
+  .education-neural-active-specialization,
+  .education-neural-active-location {
+    grid-column: auto;
+  }
+
+  .education-neural-meta-label {
+    grid-area: details;
+  }
+
+  .education-neural-active-title {
+    margin-top: -0.15rem;
+  }
+
+  .education-neural-signals {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .education-neural-signal:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-neural-orb,
+  .education-neural-active-image-button,
+  .education-neural-node-card {
+    transition: none;
+  }
+}
+
+
+/* Final polish: show the complete selected record and make the markers feel like modern evidence nodes. */
+.education-neural-orb-core {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 28%),
+    radial-gradient(circle at 50% 62%, color-mix(in srgb, var(--node-color, var(--forensic-green)) 22%, rgba(4, 30, 29, 0.96)), rgba(3, 12, 17, 0.88) 68%);
+  box-shadow:
+    0 0.75rem 1.4rem rgba(0, 0, 0, 0.3),
+    0 0 1.35rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 68%, transparent),
+    inset 0 0 1.8rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 30%, transparent);
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 180ms ease;
+}
+
+.education-neural-node:hover .education-neural-orb-core,
+.education-neural-node:focus-visible .education-neural-orb-core {
+  transform: translateZ(12px) scale(1.045);
+}
+
+.education-neural-active {
+  grid-template-areas:
+    "header header"
+    "image meta"
+    "image title"
+    "image school"
+    "image specialization"
+    "image location"
+    "image facts"
+    "image status";
+}
+
+.education-neural-active-school,
+.education-neural-active-specialization,
+.education-neural-active-location {
+  display: block;
+  grid-column: auto;
+}
+
+.education-neural-active-school { grid-area: school; margin: 0; }
+.education-neural-active-specialization { grid-area: specialization; margin: 0; }
+.education-neural-active-location { grid-area: location; margin: 0; }
+
+@media (max-width: 720px) {
+  .education-neural-active {
+    grid-template-areas:
+      "header"
+      "image"
+      "meta"
+      "title"
+      "school"
+      "specialization"
+      "location"
+      "facts"
+      "status";
+  }
+
+  .education-neural-active-school,
+  .education-neural-active-specialization,
+  .education-neural-active-location {
+    grid-column: auto;
+  }
+}
+
+.education-neural-active-title { grid-area: title; }
+
+
+/* Inline campus evidence preview: quiet at rest, cinematic on hover/focus. */
+.education-neural-orb-preview {
+  position: absolute;
+  z-index: 1;
+  inset: 0.35rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--node-color, var(--forensic-green)) 70%, white);
+  border-radius: 0.55rem;
+  background: #061014;
+  box-shadow: 0 0 1.2rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 44%, transparent);
+  opacity: 0.42;
+  pointer-events: none;
+  transform: translateZ(1px);
+  transition: inset 220ms cubic-bezier(0.23, 1, 0.32, 1), width 220ms cubic-bezier(0.23, 1, 0.32, 1), height 220ms cubic-bezier(0.23, 1, 0.32, 1), opacity 180ms ease, border-radius 220ms ease, box-shadow 220ms ease;
+}
+
+.education-neural-orb-preview::after {
+  content: "CAMPUS ASSET";
+  position: absolute;
+  right: 0.4rem;
+  bottom: 0.35rem;
+  padding: 0.18rem 0.3rem;
+  color: #06100d;
+  background: var(--node-color, var(--forensic-green));
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.45rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: translateY(0.25rem);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.education-neural-orb-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(1.12) brightness(0.72);
+  transform: scale(1.05);
+  transition: transform 420ms cubic-bezier(0.23, 1, 0.32, 1), filter 220ms ease;
+}
+
+.education-neural-node:hover,
+.education-neural-node:focus-visible {
+  z-index: 50;
+}
+
+.education-neural-node:hover .education-neural-orb-preview,
+.education-neural-node:focus-visible .education-neural-orb-preview {
+  inset: auto;
+  top: 50%;
+  left: 50%;
+  width: min(19rem, 30vw);
+  height: min(12rem, 19vw);
+  opacity: 1;
+  border-radius: 0.9rem;
+  box-shadow: 0 1.4rem 3rem rgba(0, 0, 0, 0.48), 0 0 2.4rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 62%, transparent);
+  pointer-events: auto;
+  transform: translate(-50%, -50%) translateZ(140px);
+}
+
+.education-neural-node:hover .education-neural-orb-preview::after,
+.education-neural-node:focus-visible .education-neural-orb-preview::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.education-neural-node:hover .education-neural-orb-preview img,
+.education-neural-node:focus-visible .education-neural-orb-preview img {
+  filter: saturate(0.95) contrast(1.08) brightness(0.92);
+  transform: scale(1);
+}
+
+.education-neural-orb-preview:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+/* Keep the expanded preview inside the viewport at the edges of the three-column row. */
+.education-neural-node:first-of-type:hover .education-neural-orb-preview,
+.education-neural-node:first-of-type:focus-visible .education-neural-orb-preview {
+  left: 72%;
+}
+
+.education-neural-node:nth-of-type(3):hover .education-neural-orb-preview,
+.education-neural-node:nth-of-type(3):focus-visible .education-neural-orb-preview {
+  left: 28%;
+}
+
+@media (max-width: 900px) {
+  .education-neural-node:hover .education-neural-orb-preview,
+  .education-neural-node:focus-visible .education-neural-orb-preview {
+    width: min(16rem, 36vw);
+    height: min(10rem, 23vw);
+  }
+}
+
+@media (max-width: 720px) {
+  .education-neural-orb-preview {
+    inset: 0.25rem;
+    opacity: 0.58;
+    border-radius: 0.48rem;
+  }
+
+  .education-neural-orb-preview::after {
+    display: none;
+  }
+
+  .education-neural-orb-preview img {
+    filter: saturate(0.8) contrast(1.08) brightness(0.8);
+  }
+
+  /* Hover is not a dependable mobile interaction; the node tap opens the existing modal. */
+  .education-neural-node:hover .education-neural-orb-preview,
+  .education-neural-node:focus-visible .education-neural-orb-preview {
+    inset: 0.25rem;
+    width: auto;
+    height: auto;
+    opacity: 0.82;
+    border-radius: 0.48rem;
+    box-shadow: 0 0 1.2rem color-mix(in srgb, var(--node-color, var(--forensic-green)) 52%, transparent);
+    transform: translateZ(1px);
+  }
+
+  .education-neural-node:first-of-type:hover .education-neural-orb-preview,
+  .education-neural-node:first-of-type:focus-visible .education-neural-orb-preview,
+  .education-neural-node:nth-of-type(3):hover .education-neural-orb-preview,
+  .education-neural-node:nth-of-type(3):focus-visible .education-neural-orb-preview {
+    left: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .education-neural-orb-preview,
+  .education-neural-orb-preview img,
+  .education-neural-orb-preview::after {
+    transition: none;
+  }
+}
+
+/* Keep the academic timeline in semantic order after all legacy overrides. */
+.education-neural-stage > .education-neural-node[data-short="CLASS X"] { grid-column: 1 !important; grid-row: 1 !important; }
+.education-neural-stage > .education-neural-node[data-short="CLASS XII"] { grid-column: 2 !important; grid-row: 1 !important; }
+.education-neural-stage > .education-neural-node[data-short="B.TECH"] { grid-column: 3 !important; grid-row: 1 !important; }
+
+@media (max-width: 720px) {
+  .education-neural-stage > .education-neural-node[data-short="CLASS X"],
+  .education-neural-stage > .education-neural-node[data-short="CLASS XII"],
+  .education-neural-stage > .education-neural-node[data-short="B.TECH"] {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+}
