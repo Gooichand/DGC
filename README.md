@@ -116,9 +116,31 @@ src/
     CustomCursor, fx.tsx   ← cursor states, magnetic buttons, 3D tilt, text reveals, particles
   hooks/                   ← Lenis smooth scroll + scroll lock, media queries, watch progress
 scripts/build-images.mjs   ← portrait/share-image pipeline (sharp)
+api/                       ← Vercel serverless functions (chat, admin, visitor-alert)
+  lib/rate-limit.js        ← shared rate limiter (KV-backed, fail-open)
 ```
 
 **Stack:** React 18, TypeScript, Vite 6, Tailwind CSS 4, Framer Motion 11, Lenis.
+
+## Security hardening (summary)
+
+This project ships with layered defenses appropriate for a static portfolio + small API:
+
+| Layer | What's in place |
+|---|---|
+| **Rate limiting** | `/api/chat` (30 req/min/IP), `/api/admin/*` (10 req/min/IP) — KV-backed, fail-open, with `Retry-After` + `X-RateLimit-*` headers. |
+| **Timing-safe auth** | Admin password compared via SHA-256 + `crypto.timingSafeEqual` (both verify & update). |
+| **Input hardening** | Message size/count caps, fact length cap, role validation — all before any model call. |
+| **XSS mitigation** | Assistant Markdown renderer escapes quotes + restricts link schemes; no `dangerouslySetInnerHTML` anywhere; `object-src 'none'`. |
+| **Security headers** | `nosniff`, `strict-origin-when-cross-origin`, `SAMEORIGIN` framing, HSTS, COOP/COEP `same-origin`, Permissions-Policy (camera/mic/geo off). |
+| **CSP (report-only)** | `Content-Security-Policy-Report-Only` deployed with an accurate allow-list for external scripts (cdnjs), fonts (Google Fonts, gstatic), and the Sanity CDN rewrite. Violations are reported but **not enforced** — safe to monitor before locking down. |
+| **Supply chain** | Dependabot weekly for root + Creative (`/.github/dependabot.yml`). |
+| **Dev-file hygiene** | `package.json`, `opencode.json`, `AGENTS.md`, `.gitignore`, `base-resume.txt` excluded from the deployed Unknown copy. |
+| **No SQL / no database** | Zero SQL injection surface — KV is key-value only. |
+
+### Vercel Deployment Protection (recommended)
+
+Enable **Preview Deployment Protection** in Vercel → Project → Settings → Deployment Protection. It adds a simple password or SSO gate to every preview URL (free) so work-in-progress deployments aren't publicly crawlable. This is a dashboard-only toggle — no code change needed.
 
 ## Accessibility and performance
 

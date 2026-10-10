@@ -2,15 +2,32 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { kv } = require('@vercel/kv');
 const fs = require('fs');
 const path = require('path');
+import { rateLimit, getClientIp } from './lib/rate-limit.js';
 
 // Gemini 1.5 Flash is no longer a current production model. Keep the model configurable
 // while using the stable low-latency default for new deployments.
 const MODEL_NAME = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
 
+// Rate limit: 30 requests per minute per IP (prevents bot abuse / key burn).
+const CHAT_RATE_LIMIT = { prefix: 'chat', limit: 30, windowSec: 60 };
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  // Rate limiting (fail-open if KV unavailable).
+  const rl = await rateLimit({ ...CHAT_RATE_LIMIT, key: getClientIp(req) });
+  if (!rl.ok) {
+    res.setHeader('Retry-After', rl.retryAfter);
+    res.setHeader('X-RateLimit-Limit', rl.limit);
+    res.setHeader('X-RateLimit-Remaining', rl.remaining);
+    res.setHeader('X-RateLimit-Reset', rl.reset);
+    return res.status(429).json({ error: rl.message, retryAfter: rl.retryAfter });
+  }
+  res.setHeader('X-RateLimit-Limit', rl.limit);
+  res.setHeader('X-RateLimit-Remaining', rl.remaining);
+  res.setHeader('X-RateLimit-Reset', rl.reset);
 
   try {
     const { messages } = req.body || {};
