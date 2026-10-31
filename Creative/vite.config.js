@@ -5,7 +5,7 @@ import * as babel from '@babel/core';
 import { generateSeoHtml } from './seo-plugin.js';
 
 // The Creative portfolio is served as a folder on the same host as the main
-// "THE SERIES" site, e.g. https://gooichand.github.io/Creative/. Everything in
+// "THE SERIES" site, e.g. https://gooichand-github-io.vercel.app/Creative/. Everything in
 // this app references public assets with root-absolute paths ("/textures/..."),
 // which only work at a domain root. The plugin below rewrites those literals to
 // be base-aware so they keep working under the /Creative/ base. Override with

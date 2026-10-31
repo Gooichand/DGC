@@ -27,14 +27,14 @@ The static site is written to `dist/`. The full portfolio (main site + `/Creativ
 
 ### The Creative portfolio (`/Creative/`)
 
-Selecting the **Creative** profile opens a separate 3D portfolio that lives in [`Creative/`](Creative/) and is served as a folder on the same host (e.g. `https://gooichand.github.io/Creative/`). The main app links to it with an absolute `/Creative/` path.
+Selecting the **Creative** profile opens a separate 3D portfolio that lives in [`Creative/`](Creative/) and is served as a folder on the same host (e.g. `https://gooichand-github-io.vercel.app/Creative/`). The main app links to it with an absolute `/Creative/` path.
 
 - **Local dev:** run the Creative dev server alongside this one — `npm --prefix Creative run dev` (it serves `http://localhost:5173/Creative/`). The main dev server automatically proxies `/Creative` to it, so clicking the card just works. Override the target with `CREATIVE_DEV_URL` in `.env.local`.
 - **Deploy:** `npm run build:all` builds both apps and nests the Creative build under `dist/Creative/`, so the whole site ships as a single folder.
 
 ### The Unknown portfolio (`/Unknown/`)
 
-Selecting the **Unknown** profile opens another standalone portfolio that lives in [`Unknown/`](Unknown/) and is served as a folder on the same host (e.g. `https://gooichand.github.io/Unknown/`). The main app links to it with an absolute `/Unknown/` path.
+Selecting the **Unknown** profile opens another standalone portfolio that lives in [`Unknown/`](Unknown/) and is served as a folder on the same host (e.g. `https://gooichand-github-io.vercel.app/Unknown/`). The main app links to it with an absolute `/Unknown/` path.
 
 Unlike Creative, Unknown is a plain HTML/CSS/JS site (no build step). Its chat/widget backend lives in the project-root [`api/`](api/) folder as Vercel serverless functions and ships with the same deployment.
 

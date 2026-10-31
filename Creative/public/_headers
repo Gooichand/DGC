@@ -3,33 +3,33 @@
 # https://<your-preview-subdomain>.pages.dev/*
 #   X-Robots-Tag: noindex
 
-https://gooichand.github.io/*
+https://gooichand-github-io.vercel.app/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 
 # Cache static assets for 1 year (Performance & SEO Server Score)
-https://gooichand.github.io/*.js
+https://gooichand-github-io.vercel.app/*.js
   Cache-Control: public, max-age=31536000, immutable
 
-https://gooichand.github.io/*.css
+https://gooichand-github-io.vercel.app/*.css
   Cache-Control: public, max-age=31536000, immutable
 
-https://gooichand.github.io/*.webp
+https://gooichand-github-io.vercel.app/*.webp
   Cache-Control: public, max-age=31536000, immutable
 
-https://gooichand.github.io/*.png
+https://gooichand-github-io.vercel.app/*.png
   Cache-Control: public, max-age=31536000, immutable
 
-https://gooichand.github.io/*.ktx2
+https://gooichand-github-io.vercel.app/*.ktx2
   Cache-Control: public, max-age=31536000, immutable
 
-https://gooichand.github.io/*.glb
+https://gooichand-github-io.vercel.app/*.glb
   Cache-Control: public, max-age=31536000, immutable
 
-https://gooichand.github.io/*.mp3
+https://gooichand-github-io.vercel.app/*.mp3
   Cache-Control: public, max-age=31536000, immutable
 
-https://gooichand.github.io/fonts/*
+https://gooichand-github-io.vercel.app/fonts/*
   Cache-Control: public, max-age=31536000, immutable

@@ -424,7 +424,7 @@ const ContactRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
                 rotation={[0, -0.2, 0]}
                 texturePath="/textures/contact/beczka.webp"
                 label="WEBSITE"
-                onClick={() => window.open('https://gooichand.github.io/', '_blank')}
+                onClick={() => window.open('https://gooichand-github-io.vercel.app/', '_blank')}
                 paintOnBeforeCompile={onBeforeCompile}
                 paintUniforms={uniformsData}
             />

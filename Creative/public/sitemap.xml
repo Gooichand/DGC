@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gooichand.github.io/Creative/</loc>
+    <loc>https://gooichand-github-io.vercel.app/Creative/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gooichand.github.io/Creative/gallery</loc>
+    <loc>https://gooichand-github-io.vercel.app/Creative/gallery</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gooichand.github.io/Creative/about</loc>
+    <loc>https://gooichand-github-io.vercel.app/Creative/about</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gooichand.github.io/Creative/studio</loc>
+    <loc>https://gooichand-github-io.vercel.app/Creative/studio</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gooichand.github.io/Creative/contact</loc>
+    <loc>https://gooichand-github-io.vercel.app/Creative/contact</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

@@ -7,14 +7,14 @@ export type Palette = { from: string; via: string; to: string; accent: string };
 
 /**
  * Where the standalone Creative portfolio lives.
- * Production: served as a folder on the same host (e.g. gooichand.github.io/Creative/).
+ * Production: served as a folder on the same host (e.g. gooichand-github-io.vercel.app/Creative/).
  * For local testing, point this at the Creative dev server (e.g. 'http://localhost:5173/').
  */
 export const creativePortfolioUrl = '/Creative/';
 
 /**
  * Where the standalone Unknown portfolio lives.
- * Production: served as a folder on the same host (e.g. gooichand.github.io/Unknown/).
+ * Production: served as a folder on the same host (e.g. gooichand-github-io.vercel.app/Unknown/).
  * Its chat/admin backend ships as /api functions in the same deployment
  * (see api/ and Unknown/api-config.js).
  */
@@ -327,7 +327,7 @@ export const projects: Project[] = [
       { value: '2', label: 'forgery detectors' },
       { value: '1', label: 'AI verification model' },
     ],
-    github: 'https://github.com/Gooichand/LOOK-DGC',
+    github: 'https://github.com/Gooichand/LOOK_DGC',
     palette: { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' },
     motif: 'eye',
   },
@@ -530,8 +530,8 @@ export const projects: Project[] = [
     build: ['Designed and shipped the original portfolio with a forensic workspace concept.'],
     features: ['Responsive design', 'GitHub Pages hosting'],
     metrics: [{ value: 'v1', label: 'origin story' }],
-    github: 'https://github.com/Gooichand/Gooichand.github.io',
-    live: 'https://gooichand.github.io/',
+    github: 'https://github.com/Gooichand/DGC',
+    live: 'https://gooichand-github-io.vercel.app/',
     palette: { from: '#24060b', via: '#6e0d1d', to: '#09070a', accent: '#ff3d5a' },
     motif: 'eye',
   },
@@ -561,7 +561,7 @@ export const projects: Project[] = [
     features: ['Simpson\'s rule', 'Step-based approximation'],
     metrics: [{ value: 'Own', label: 'project' }],
     github: 'https://github.com/Gooichand/Simpson-s-Rule-Calculator',
-    live: 'https://gooichand.github.io/Simpson-s-Rule-Calculator/',
+    live: 'https://gooichand-github-io.vercel.app/Simpson-s-Rule-Calculator/',
     palette: { from: '#0c1216', via: '#2b434f', to: '#070a0c', accent: '#7ee0ff' },
     motif: 'flow',
   },
@@ -576,7 +576,7 @@ export const projects: Project[] = [
     features: ['Pass generation', 'Security-first UI'],
     metrics: [{ value: 'Own', label: 'project' }],
     github: 'https://github.com/Gooichand/SECURITY-PASS-DGC',
-    live: 'https://gooichand.github.io/SECURITY-PASS-DGC/',
+    live: 'https://gooichand-github-io.vercel.app/SECURITY-PASS-DGC/',
     palette: { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' },
     motif: 'shield',
   },
@@ -591,7 +591,7 @@ export const projects: Project[] = [
     features: ['Personalized guidance', 'AI coach interface'],
     metrics: [{ value: 'Own', label: 'project' }],
     github: 'https://github.com/Gooichand/AI-Learning-Coach-ibm',
-    live: 'https://gooichand.github.io/AI-Learning-Coach-ibm/',
+    live: 'https://gooichand-github-io.vercel.app/AI-Learning-Coach-ibm/',
     palette: { from: '#120822', via: '#3d1a6e', to: '#07060c', accent: '#b98bff' },
     motif: 'flow',
   },

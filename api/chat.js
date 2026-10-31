@@ -1,7 +1,7 @@
-const { GoogleGenerativeAI } = require('@google/generative-ai');
-const { kv } = require('@vercel/kv');
-const fs = require('fs');
-const path = require('path');
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { kv } from '@vercel/kv';
+import fs from 'fs';
+import path from 'path';
 import { rateLimit, getClientIp } from './lib/rate-limit.js';
 
 // Gemini 1.5 Flash is no longer a current production model. Keep the model configurable
@@ -11,7 +11,7 @@ const MODEL_NAME = process.env.GEMINI_MODEL || 'gemini-3.5-flash-lite';
 // Rate limit: 30 requests per minute per IP (prevents bot abuse / key burn).
 const CHAT_RATE_LIMIT = { prefix: 'chat', limit: 30, windowSec: 60 };
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }

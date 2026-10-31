@@ -1,5 +1,5 @@
-const crypto = require('crypto');
-const { kv } = require('@vercel/kv');
+import crypto from 'crypto';
+import { kv } from '@vercel/kv';
 import { rateLimit, getClientIp } from '../lib/rate-limit.js';
 
 // Constant-time comparison so response timing can't be used to guess the password.
@@ -13,7 +13,7 @@ function safeEqual(a, b) {
 // Rate limit: 10 attempts/min/IP to harden against brute force.
 const ADMIN_RATE_LIMIT = { prefix: 'admin', limit: 10, windowSec: 60 };
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }

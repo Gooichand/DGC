@@ -39,6 +39,10 @@ function createExpandableNavigation() {
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            max-width: calc(100vw - 24px);
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -117,6 +121,16 @@ function createExpandableNavigation() {
             margin-left: 0.5rem;
         }
 
+        .floating-expandable-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Right-edge fade only while there is more to scroll to */
+        .floating-expandable-nav.scrollable {
+            mask-image: linear-gradient(to right, black 90%, rgba(0,0,0,0.3) 100%);
+            -webkit-mask-image: linear-gradient(to right, black 90%, rgba(0,0,0,0.3) 100%);
+        }
+
         .nav-separator {
             width: 1px;
             height: 24px;
@@ -138,9 +152,7 @@ function createExpandableNavigation() {
                 scrollbar-width: none;
             }
             
-            .floating-expandable-nav::-webkit-scrollbar {
-                display: none;
-            }
+
             
             .nav-tab {
                 font-size: 0.7rem;
@@ -228,9 +240,19 @@ tabElement.title = tab.title;
     // Add to body instead of nav container
     document.body.appendChild(floatingNav);
 
-    // Labels always visible on real desktops; compact icons on phones
-    if (window.screen.width <= 900) {
-        floatingNav.classList.add('compact-labels');
+    // Compact the labels whenever the bar is wider than the viewport —
+    // measured on the real layout (screen.width lies about browser windows).
+    const fitNav = () => {
+        floatingNav.classList.remove('compact-labels');
+        if (floatingNav.scrollWidth > window.innerWidth - 32) {
+            floatingNav.classList.add('compact-labels');
+        }
+        floatingNav.classList.toggle('scrollable', floatingNav.scrollWidth > floatingNav.clientWidth + 4);
+    };
+    fitNav();
+    window.addEventListener('resize', fitNav);
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(fitNav);
     }
 
     // Handle scroll-based active state

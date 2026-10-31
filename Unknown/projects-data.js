@@ -201,7 +201,7 @@ const projectsData = [
         category: "OWN PROJECT - VAULT",
         tech: ["HTML", "CSS", "JavaScript", "EmailJS"],
         github: "https://github.com/Gooichand/Gooichand.github.io",
-        live: "https://gooichand.github.io/Unknown/",
+        live: "https://gooichand-github-io.vercel.app/Unknown/",
         openForCollaboration: false
     },
     {
@@ -231,7 +231,7 @@ const projectsData = [
         category: "OWN PROJECT - VAULT",
         tech: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/Gooichand/SECURITY-PASS-DGC",
-        live: "https://gooichand.github.io/SECURITY-PASS-DGC/",
+        live: "https://gooichand-github-io.vercel.app/SECURITY-PASS-DGC/",
         openForCollaboration: false
     }
 ];

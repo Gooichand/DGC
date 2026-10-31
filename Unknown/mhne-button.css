@@ -1,6 +1,6 @@
 /* MHNE Button Styles - From Uiverse.io by MuhammadHasann */
 .mhne-btn {
-  position: fixed;
+  position: absolute;
   top: 20px;
   right: 20px;
   z-index: 9999;

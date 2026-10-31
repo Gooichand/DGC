@@ -1,7 +1,7 @@
 'use strict';
 
-const { Resend } = require('resend');
-const { kv } = require('@vercel/kv');
+import { Resend } from 'resend';
+import { kv } from '@vercel/kv';
 
 // Built lazily so importing this module never throws when the key is absent.
 const resendClient = () => new Resend(process.env.RESEND_API_KEY);
@@ -340,7 +340,7 @@ function buildEmail(data) {
   return { subject, html: htmlBody, text: plain };
 }
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   res.setHeader('X-Content-Type-Options', 'nosniff');
 

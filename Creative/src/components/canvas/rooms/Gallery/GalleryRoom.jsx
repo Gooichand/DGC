@@ -67,7 +67,7 @@ const FALLBACK_PROJECTS = [
         title: 'PORTFOLIO',
         front: '/textures/gallery/dgc_portfolio.webp',
         painted: '/textures/gallery/dgc_portfolio_painted.webp',
-        url: 'https://gooichand.github.io/',
+        url: 'https://gooichand-github-io.vercel.app/',
         description: 'The Origin — the first Gopichand Dandimeni identity in the series, still streaming on GitHub Pages. A forensic-workspace concept that started the whole universe.',
         techStack: ['/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/netlifylogo.webp']
     },

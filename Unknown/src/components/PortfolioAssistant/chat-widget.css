@@ -543,3 +543,15 @@
 .chat-message.assistant .chat-table tr:nth-child(even) {
   background: rgba(255, 255, 255, 0.02);
 }
+
+/* Keep the orb clear of the floating bottom nav on narrow screens */
+@media (max-width: 768px) {
+  #chat-widget-container {
+    bottom: 84px;
+  }
+  #chat-window {
+    bottom: 68px;
+    max-height: calc(100vh - 190px);
+    max-height: calc(100dvh - 190px);
+  }
+}

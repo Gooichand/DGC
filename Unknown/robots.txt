@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://gooichand.github.io/Unknown/sitemap.xml
+Sitemap: https://gooichand-github-io.vercel.app/Unknown/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1

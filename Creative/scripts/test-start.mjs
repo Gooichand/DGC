@@ -87,8 +87,8 @@ test('all destinations are present in HTML, and the portfolio appears once', () 
     'https://github.com/Gooichand',
     'https://github.com/Gooichand',
     'https://www.linkedin.com/in/dandimeni-gopichand',
-    'https://gooichand.github.io/',
-    'https://github.com/Gooichand/LOOK-DGC',
+    'https://gooichand-github-io.vercel.app/',
+    'https://github.com/Gooichand/LOOK_DGC',
     'https://github.com/Gooichand/evid-dgc-certificates',
   ]);
   assert.match(html, /aria-label="Interactive Portfolio"/);

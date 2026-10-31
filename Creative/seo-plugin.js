@@ -15,7 +15,7 @@ const sanityClient = createClient({
 });
 
 // UPDATE DOMAIN: real deploy origin (see index.html).
-const SITE_URL = 'https://gooichand.github.io/Creative';
+const SITE_URL = 'https://gooichand-github-io.vercel.app/Creative';
 
 // Tech stack filename -> human-readable name mapping for JSON-LD
 const TECH_STACK_NAMES = {
@@ -107,7 +107,7 @@ function buildJsonLd(globalInfo, projects, studio, awards, faqList) {
     if (projects && projects.length > 0) {
         graph.push({
             '@type': 'ItemList',
-            '@id': 'https://gooichand.github.io/Creative/#projectslist',
+            '@id': 'https://gooichand-github-io.vercel.app/Creative/#projectslist',
             name: 'Portfolio Projects by Gopichand Dandimeni',
             description: 'Selected cyber security, digital forensics and web development projects showcasing React, Three.js and secure engineering.',
             numberOfItems: projects.length,
@@ -119,7 +119,7 @@ function buildJsonLd(globalInfo, projects, studio, awards, faqList) {
                     name: p.seoTitle || p.title,
                     description: p.seoDescription || p.description || '',
                     url: p.url || undefined,
-                    creator: { '@id': 'https://gooichand.github.io/Creative/#person' },
+                    creator: { '@id': 'https://gooichand-github-io.vercel.app/Creative/#person' },
                     ...(p.techStack && p.techStack.length > 0 ? {
                         keywords: p.techStack.map(t => TECH_STACK_NAMES[t] || t).join(', ')
                     } : {}),
@@ -132,11 +132,11 @@ function buildJsonLd(globalInfo, projects, studio, awards, faqList) {
             const projectSlug = p.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
             graph.push({
                 '@type': 'CreativeWork',
-                '@id': `https://gooichand.github.io/Creative/#project-${projectSlug}`,
+                '@id': `https://gooichand-github-io.vercel.app/Creative/#project-${projectSlug}`,
                 name: p.seoTitle || p.title,
                 description: p.seoDescription || p.description || '',
                 url: p.url || undefined,
-                creator: { '@id': 'https://gooichand.github.io/Creative/#person' },
+                creator: { '@id': 'https://gooichand-github-io.vercel.app/Creative/#person' },
                 ...(p.techStack && p.techStack.length > 0 ? {
                     keywords: p.techStack.map(t => TECH_STACK_NAMES[t] || t).join(', ')
                 } : {}),
@@ -187,25 +187,25 @@ function buildJsonLd(globalInfo, projects, studio, awards, faqList) {
             } else if (s.platform === 'instagram' || s.platform === 'x' || s.platform === 'linkedin') {
                 graph.push({
                     '@type': 'SocialMediaPosting',
-                    '@id': `https://gooichand.github.io/Creative/#${studioSlug}`,
+                    '@id': `https://gooichand-github-io.vercel.app/Creative/#${studioSlug}`,
                     headline: s.seoTitle || s.title,
                     description: s.seoDescription || s.description || '',
                     url: s.url || undefined,
-                    image: s.thumbnailUrl || 'https://gooichand.github.io/Creative/og-image.webp',
+                    image: s.thumbnailUrl || 'https://gooichand-github-io.vercel.app/Creative/og-image.webp',
                     ...(s.date ? { datePublished: formatIsoDate(s.date) } : {}),
                     ...(s.likes ? { interactionStatistic: { '@type': 'InteractionCounter', interactionType: 'https://schema.org/LikeAction', userInteractionCount: s.likes } } : {}),
-                    author: { '@id': 'https://gooichand.github.io/Creative/#person' },
+                    author: { '@id': 'https://gooichand-github-io.vercel.app/Creative/#person' },
                 });
             } else if (s.platform === 'codrops') {
                 graph.push({
                     '@type': 'Article',
-                    '@id': `https://gooichand.github.io/Creative/#${studioSlug}`,
+                    '@id': `https://gooichand-github-io.vercel.app/Creative/#${studioSlug}`,
                     headline: s.seoTitle || s.title,
                     description: s.seoDescription || s.description || '',
                     url: s.url || undefined,
-                    image: s.thumbnailUrl || 'https://gooichand.github.io/Creative/og-image.webp',
+                    image: s.thumbnailUrl || 'https://gooichand-github-io.vercel.app/Creative/og-image.webp',
                     ...(s.date ? { datePublished: formatIsoDate(s.date) } : {}),
-                    author: { '@id': 'https://gooichand.github.io/Creative/#person' },
+                    author: { '@id': 'https://gooichand-github-io.vercel.app/Creative/#person' },
                 });
             }
         });
@@ -229,7 +229,7 @@ function buildJsonLd(globalInfo, projects, studio, awards, faqList) {
                     url: a.url || undefined,
                     description: a.seoDescription || undefined,
                     award: categoryLabels[a.category] || a.category,
-                    creator: { '@id': 'https://gooichand.github.io/Creative/#person' },
+                    creator: { '@id': 'https://gooichand-github-io.vercel.app/Creative/#person' },
                 }
             }))
         });
@@ -261,7 +261,7 @@ function buildLlmsTxt(globalInfo, projects, studio, awards, faqList) {
         content += `## Selected Portfolio Projects\n`;
         projects.forEach(p => {
             const tech = p.techStack ? ` (Tech: ${p.techStack.map(t => TECH_STACK_NAMES[t] || t).join(', ')})` : '';
-            content += `- [${p.seoTitle || p.title}](${p.url || 'https://gooichand.github.io/Creative'}): ${p.seoDescription || p.description || ''}${tech}\n`;
+            content += `- [${p.seoTitle || p.title}](${p.url || 'https://gooichand-github-io.vercel.app/Creative'}): ${p.seoDescription || p.description || ''}${tech}\n`;
         });
         content += `\n`;
     }
@@ -269,7 +269,7 @@ function buildLlmsTxt(globalInfo, projects, studio, awards, faqList) {
     if (studio && studio.length > 0) {
         content += `## Studio Content & Publications\n`;
         studio.forEach(s => {
-            content += `- [${s.seoTitle || s.title} (${s.platform})](${s.url || 'https://gooichand.github.io/Creative'}): ${s.seoDescription || s.description || ''}\n`;
+            content += `- [${s.seoTitle || s.title} (${s.platform})](${s.url || 'https://gooichand-github-io.vercel.app/Creative'}): ${s.seoDescription || s.description || ''}\n`;
         });
         content += `\n`;
     }

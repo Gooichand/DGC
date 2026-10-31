@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   // The standalone Creative portfolio is served as a folder on the same host
-  // (e.g. https://gooichand.github.io/Creative/ — see Creative/vite.config.js).
+  // (e.g. https://gooichand-github-io.vercel.app/Creative/ — see Creative/vite.config.js).
   // In local dev this prefix is proxied to the Creative dev server so that
   // clicking the "Creative" profile actually opens it instead of falling back
   // to this app's own SPA index. Override with CREATIVE_DEV_URL in .env.local.

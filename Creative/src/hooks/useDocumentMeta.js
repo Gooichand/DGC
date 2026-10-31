@@ -11,7 +11,7 @@ import { useScene } from '../context/SceneContext';
 
 // UPDATE THIS to the real deployed origin when publishing the Creative site.
 // Keep it in sync with the canonical URL in index.html.
-const SITE_ORIGIN = 'https://gooichand.github.io';
+const SITE_ORIGIN = 'https://gooichand-github-io.vercel.app';
 
 // The path this app is served under. It matches the Vite `base` in vite.config.js:
 // '/Creative/' when deployed as a folder on the shared host, '/' for a root deploy.

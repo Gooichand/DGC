@@ -22,4 +22,4 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-Sitemap: https://gooichand.github.io/Creative/sitemap.xml
+Sitemap: https://gooichand-github-io.vercel.app/Creative/sitemap.xml
